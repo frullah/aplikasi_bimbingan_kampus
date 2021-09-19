@@ -73,3 +73,10 @@ gem "rexml"
 gem "devise", github: "ghiculescu/devise", branch: "patch-2"
 
 gem "bootstrap", "~> 5.1"
+
+gem "cssbundling-rails", "~> 0.1.8"
+
+group :development do
+  gem "guard-livereload", require: false
+  gem "rack-livereload"
+end

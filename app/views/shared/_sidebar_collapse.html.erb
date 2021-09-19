@@ -1,0 +1,10 @@
+<li>
+  <a href="#menu" data-bs-toggle="collapse" data-bs-target="#<%= id %>" aria-expanded="false">
+    <%= title %>
+  </a>
+  <ul class="collapse" id="<%= id %>">
+    <% items.each do |item| %>
+      <%= sidebar_link(href: item[:href]) { item[:text] } %>
+    <% end %>
+  </ul>
+</li>

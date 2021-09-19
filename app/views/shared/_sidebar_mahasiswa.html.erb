@@ -1,0 +1,12 @@
+<%= sidebar_link(href: "/") { "Mahasiswa" } %>
+<%= sidebar_link(href: "/") { "Beranda" } %>
+<%= render "shared/sidebar_collapse", id: "menu-kkp", title: "Pendaftaran KKP", items: [
+  {href: "#", text: "Daftar KKP"},
+  {href: "#status_nota_dinas_kkp", text: "Status Nota Dinas KKP" },
+  {href: "#bimbingan_kkp&nim=#{@current_user&.id_number}", text: "Bimbingan KKP" },
+] %>
+<%= render "shared/sidebar_collapse", id: "menu-skripsi", title: "Pendaftaran Skripsi", items: [
+  {href: "#daftar_skripsi", text: "Daftar SKRIPSI" },
+  {href: "#status_nota_dinas_skripsi", text: "Status Nota Dinas SKRIPSI" },
+] %>
+<%= sidebar_link(href: "about") { "About" }%>

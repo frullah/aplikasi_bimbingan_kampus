@@ -1,4 +1,4 @@
-
+/* Custom */
 /*=============================================================
     Authour URI: www.binarycart.com
     Version: 1.1
@@ -207,12 +207,13 @@
   
   .navbar-cls-top .navbar-brand {
     color: #fff;
-  background: #FF4500;
-  width: 260px;
-  text-align: center;
-  height: 60px;
-  font-size: 30px;
-  font-weight: 700;
+    background: #FF4500;
+    width: 260px;
+    text-align: center;
+    height: 60px;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 0;
   }
   .active-menu {
       background-color:#000!important;
