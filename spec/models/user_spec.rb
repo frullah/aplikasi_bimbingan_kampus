@@ -6,11 +6,14 @@ RSpec.describe User, type: :model do
   describe "validations" do
     context "presences" do
       it { is_expected.to validate_presence_of(:username) }
-      it { is_expected.to validate_presence_of(:id_number) }
     end
 
     context "uniqueness" do
       it { expect(user).to validate_uniqueness_of(:username) }
+      it {
+        expect(user).to validate_uniqueness_of(:id_number)
+          .scoped_to(:username)
+      }
     end
   end
 

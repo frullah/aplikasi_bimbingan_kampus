@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :rememberable, :validatable
 
   validates :username, uniqueness: true, presence: true
+  validates :id_number, uniqueness: {scope: :username}
 
   enum user_type: [
     :administrator,

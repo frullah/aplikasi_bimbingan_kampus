@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Authentications", type: :system do
   before do
@@ -13,5 +13,15 @@ RSpec.describe "Authentications", type: :system do
     fill_in "Password", with: user.password
     click_button "Masuk"
     expect(page).to have_current_path(root_path)
+  end
+
+  context "invalid credentials" do
+    fit "show error message" do
+      visit root_path
+      fill_in "Username", with: user.username
+      fill_in "Password", with: user.password
+      click_button "Masuk"
+      expect(page).to have_content("Invalid Username or password.")
+    end
   end
 end
