@@ -92,3 +92,5 @@ end
 group :development, :test do
   gem "factory_bot_rails"
 end
+
+gem "bootstrap_form", "~> 4.5"
