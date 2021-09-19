@@ -109,6 +109,11 @@ GEM
     erubi (1.10.0)
     eventmachine (1.2.7)
     execjs (2.8.1)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.4)
     formatador (0.3.0)
     globalid (0.5.2)
@@ -249,6 +254,8 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     shellany (0.0.1)
+    shoulda-matchers (4.5.1)
+      activesupport (>= 4.2.0)
     spring (3.0.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -296,6 +303,7 @@ DEPENDENCIES
   cssbundling-rails (~> 0.1.8)
   debug (>= 1.0.0)
   devise!
+  factory_bot_rails
   guard-livereload
   guard-rspec
   importmap-rails (>= 0.3.4)
@@ -306,6 +314,7 @@ DEPENDENCIES
   rexml
   rspec-rails
   selenium-webdriver
+  shoulda-matchers (~> 4.0)
   spring
   spring-commands-rspec (~> 1.0)
   sqlite3 (~> 1.4)

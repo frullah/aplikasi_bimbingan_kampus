@@ -84,3 +84,15 @@ end
 group :development do
   gem "guard-rspec", require: false
 end
+
+group :test do
+  gem "shoulda-matchers", "~> 4.0"
+end
+
+group :development, :test do
+  gem "factory_bot_rails"
+end
+
+group :development, :test do
+  gem "factory_bot_rails"
+end
