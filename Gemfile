@@ -70,7 +70,7 @@ end
 
 gem "rexml"
 
-gem "devise", github: "ghiculescu/devise", branch: "patch-2"
+gem "devise", git: "https://github.com/strobilomyces/devise.git", branch: "patch-1"
 
 gem "bootstrap", "~> 5.1"
 
@@ -79,4 +79,8 @@ gem "cssbundling-rails", "~> 0.1.8"
 group :development do
   gem "guard-livereload", require: false
   gem "rack-livereload"
+end
+
+group :development do
+  gem "guard-rspec", require: false
 end

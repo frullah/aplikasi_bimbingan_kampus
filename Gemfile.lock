@@ -1,9 +1,9 @@
 GIT
-  remote: https://github.com/ghiculescu/devise.git
-  revision: e37ea6a0143b9b8a3477b1ed397d8a22ad317a61
-  branch: patch-2
+  remote: https://github.com/strobilomyces/devise.git
+  revision: 755e84b7228f19be0e82bdc5486073715b2a32ed
+  branch: patch-1
   specs:
-    devise (4.7.3)
+    devise (4.8.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -128,6 +128,10 @@ GEM
       guard (~> 2.8)
       guard-compat (~> 1.0)
       multi_json (~> 1.8)
+    guard-rspec (4.7.3)
+      guard (~> 2.1)
+      guard-compat (~> 1.1)
+      rspec (>= 2.99.0, < 4.0)
     http_parser.rb (0.6.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
@@ -211,6 +215,10 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -289,6 +297,7 @@ DEPENDENCIES
   debug (>= 1.0.0)
   devise!
   guard-livereload
+  guard-rspec
   importmap-rails (>= 0.3.4)
   puma (~> 5.0)
   rack-livereload
