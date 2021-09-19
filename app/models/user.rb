@@ -11,4 +11,15 @@ class User < ApplicationRecord
     :dosen,
     :mahasiswa
   ]
+
+  def menu_presenter
+    case user_type
+    when :administrator
+      AdministratorMenuPresenter
+    when :dosen
+      DosenMenuPresenter
+    else
+      MahasiswaMenuPresenter
+    end
+  end
 end

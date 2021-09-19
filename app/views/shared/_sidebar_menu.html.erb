@@ -1,0 +1,7 @@
+<% items.each do |item| %>
+  <% if item[:items].is_a?(Array) %>
+    <%= render "shared/sidebar_collapse", **item %>
+  <% else %>
+    <%= render("shared/sidebar_link", href: item[:href]) { item[:text] } %>
+  <% end %>
+<% end %>

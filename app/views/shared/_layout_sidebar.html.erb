@@ -1,6 +1,8 @@
 <nav class="navbar-default navbar-side" role="navigation">
   <div class="sidebar-collapse">
     <ul class="nav flex-column" id="main-menu">
-      <%= render "shared/sidebar_mahasiswa" %>
+      <%= cache current_user.menu_presenter.cache_key do %>
+        <%= render "shared/sidebar_menu", items: current_user.menu_presenter.menus %>
+      <% end %>
   </div>
 </nav>
