@@ -18,7 +18,7 @@ RSpec.describe "Authentications", type: :system do
   context "invalid credentials" do
     fit "show error message" do
       visit root_path
-      fill_in "Username", with: user.username
+      fill_in "Username", with: user.username + "X"
       fill_in "Password", with: user.password
       click_button "Masuk"
       expect(page).to have_content("Invalid Username or password.")
