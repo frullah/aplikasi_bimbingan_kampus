@@ -22,7 +22,7 @@ gem "turbo-rails", ">= 0.7.11"
 gem "stimulus-rails", ">= 0.4.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder", "~> 2.7"
+# gem "jbuilder", "~> 2.7"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
@@ -63,8 +63,13 @@ group :test do
   gem "capybara", ">= 3.26"
   gem "selenium-webdriver"
   gem "webdrivers"
+
+  gem "rspec-rails"
+  gem "spring-commands-rspec", "~> 1.0"
 end
 
 gem "rexml"
 
-gem "devise", "~> 4.8"
+gem "devise", github: "ghiculescu/devise", branch: "patch-2"
+
+gem "bootstrap", "~> 5.1"

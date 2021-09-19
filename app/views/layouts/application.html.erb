@@ -10,6 +10,51 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div id="wrapper">
+    <%= render "shared/header" %>
+
+           <!-- /. NAV TOP  -->
+                <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+				<li class="text-center">
+                    
+					</li>
+				
+					<li><a href="index.php?halaman=mahasiswa">Mahasiswa</a></li>
+                    <li><a href="index.php?halaman=beranda">Beranda</a></li>
+                    <li><a href="">Pendaftaran KKP</a>
+                    <ul>
+                        <li><a href="index.php?halaman=daftar_kkp" style="color: white">Daftar KKP</a></li>
+                        <br>
+                        <li><a href="index.php?halaman=status_nota_dinas_kkp&nim=<?php echo @$_SESSION["id_mahasiswa"] ?>" style="color: white">Status Nota Dinas KKP</a></li>
+                        <br>
+                        <li><a href="index.php?halaman=bimbingan_kkp&nim=<?php echo @$_SESSION["id_mahasiswa"] ?>" style="color: white">Bimbingan KKP</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="">Pendaftaran SKRIPSI</a>
+                    <ul>
+                        <li><a href="index.php?halaman=daftar_skripsi" style="color: white">Daftar SKRIPSI</a></li>
+                        <br>
+                        <li><a href="index.php?halaman=status_nota_dinas_skripsi&nim=<?php echo @$_SESSION["id_mahasiswa"] ?>" style="color: white">Status Nota Dinas SKRIPSI</a></li>
+                        <br>
+                        <!-- <li><a href="index.php?halaman=bimbingan_skripsi" style="color: white">Bimbingan SKRIPSI</a></li>   -->
+                    </ul>
+                    </li>
+                    <li><a href="index.php?halaman=about">About</a></li> 	
+                </ul>
+               
+            </div>
+            
+        </nav>  
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+              <%= yield %>
+            </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
   </body>
 </html>
