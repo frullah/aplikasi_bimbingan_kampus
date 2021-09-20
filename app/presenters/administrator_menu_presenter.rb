@@ -1,7 +1,7 @@
 
 module AdministratorMenuPresenter
   def self.cache_key
-    "menus:administrator1"
+    "v1/menus/administrator"
   end
 
   def self.menus
@@ -25,6 +25,7 @@ module AdministratorMenuPresenter
         ]
       },
       {href: "about", text: "Data Dosen Pembimbing"},
+      {href: "users", text: "Data Pengguna"},
       {href: "about", text: "About"}
     ]
   end
