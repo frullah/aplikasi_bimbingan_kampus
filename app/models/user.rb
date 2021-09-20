@@ -14,9 +14,9 @@ class User < ApplicationRecord
 
   def menu_presenter
     case user_type
-    when :administrator
+    when "administrator"
       AdministratorMenuPresenter
-    when :dosen
+    when "dosen"
       DosenMenuPresenter
     else
       MahasiswaMenuPresenter

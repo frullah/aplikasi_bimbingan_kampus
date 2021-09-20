@@ -1,4 +1,8 @@
-module MahasiswaMenuPresenter
+module DosenMenuPresenter
+  def self.cache_key
+    "menus/dosen"
+  end
+
   def self.menus
     [
       {href: "/", text: "Mahasiswa"},
