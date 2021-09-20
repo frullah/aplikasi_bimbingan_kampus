@@ -87,6 +87,7 @@ end
 
 group :test do
   gem "shoulda-matchers", "~> 4.0"
+  gem "rails-controller-testing", "~> 1.0"
 end
 
 group :development, :test do
@@ -94,3 +95,5 @@ group :development, :test do
 end
 
 gem "bootstrap_form", "~> 4.5"
+
+gem "pry", "~> 0.14.1"
