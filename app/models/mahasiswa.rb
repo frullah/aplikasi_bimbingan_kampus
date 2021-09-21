@@ -1,5 +1,5 @@
 class Mahasiswa < User
-  default_scope { where(user_type: :administrator) }
+  default_scope { where(user_type: :mahasiswa) }
 
   def user_type
     :mahasiswa

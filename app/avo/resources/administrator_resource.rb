@@ -1,4 +1,4 @@
-class MahasiswaResource < Avo::BaseResource
+class AdministratorResource < Avo::BaseResource
   self.title = :name
   self.includes = []
   # self.search_query = ->(params:) do
@@ -7,9 +7,8 @@ class MahasiswaResource < Avo::BaseResource
 
   field :id, as: :id
   include UserResourceFields
-  field :id_number, as: :text, name: "NIM", placeholder: "NIM", required: true, maxlength: 16
 
   def plural_name
-    "Mahasiswa"
+    "Administrator"
   end
 end

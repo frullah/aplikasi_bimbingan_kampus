@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :rememberable, :validatable
 
   validates :username, uniqueness: true, presence: true
-  validates :id_number, uniqueness: {scope: :username}
+  validates :id_number, uniqueness: {scope: :user_type}
+  validates :name, presence: true, length: {maximum: 128}
 
   enum user_type: [
     :administrator,
@@ -21,5 +22,9 @@ class User < ApplicationRecord
     else
       MahasiswaMenuPresenter
     end
+  end
+
+  def password_required?
+    !persisted?
   end
 end

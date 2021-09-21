@@ -1,7 +1,11 @@
 
 module AdministratorMenuPresenter
+  class << self
+    include Rails.application.routes.url_helpers
+  end
+
   def self.cache_key
-    "v1/menus/administrator"
+    "v3/menus/administrator"
   end
 
   def self.menus
@@ -25,7 +29,9 @@ module AdministratorMenuPresenter
         ]
       },
       {href: "about", text: "Data Dosen Pembimbing"},
-      {href: "users", text: "Data Pengguna"},
+      {href: avo_path + "/resources/administrators", text: "Data Administrator"},
+      {href: avo_path + "/resources/dosens", text: "Data Dosen"},
+      {href: avo_path + "/resources/mahasiswas", text: "Data Mahasiswa"},
       {href: "about", text: "About"}
     ]
   end

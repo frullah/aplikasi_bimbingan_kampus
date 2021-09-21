@@ -62,7 +62,7 @@ en:
     new: 'new'
     attach_item: 'Attach %{item}'
     choose_item: 'Choose %{item}'
-    create_new_item: 'Create new %{item}'
+    create_new_item: 'Buat baru %{item}'
     table_view: 'Table view'
     grid_view: 'Grid view'
     next_page: 'Next page'
@@ -78,6 +78,14 @@ en:
         zero: 'users'
         one: 'user'
         other: 'users'
+      mahasiswa:
+        zero: 'mahasiswa'
+        one: 'mahasiswa'
+        other: 'mahasiswa'
+      mahasiswas:
+        zero: 'mahasiswa'
+        one: 'mahasiswa'
+        other: 'mahasiswa'
     reset_filters: 'Reset filters'
     not_authorized: 'You are not authorized to perform this action.'
     search:
