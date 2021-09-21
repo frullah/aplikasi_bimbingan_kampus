@@ -97,3 +97,5 @@ end
 gem "bootstrap_form", "~> 4.5"
 
 gem "pry", "~> 0.14.1"
+
+gem "avo", "~> 1.13"
