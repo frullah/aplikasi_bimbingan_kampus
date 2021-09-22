@@ -1,4 +1,4 @@
-<div class="container p-4 mt-5 pt-5" style="max-width: 400px">
+<div class="container p-4 mt-5 pt-5 mx-auto" style="max-width: 400px">
   <% if alert %>
     <div class="alert alert-danger">
       <%= alert %>
@@ -7,25 +7,11 @@
 
   <h3 class="text-center mb-4">Masuk Sistem Bimbingan</h3>
 
-  <%= bootstrap_form_with(model: resource, as: resource_name, url: session_path(resource_name), html: {"data-turbo": false}) do |f| %>
-    <div class="container">
-      <div class="row gy-3">
-        <div class="col-12">
-          <%= f.text_field :username, autofocus: true, autocomplete: "email" %>
-        </div>
-        <div class="col-12">
-          <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
-        <% if devise_mapping.rememberable? %>
-          <div class="col-12">
-            <%= f.check_box :remember_me %>
-          </div>
-        <% end %>
-        <div class="col">
-          <%= f.primary "Masuk" %>
-        </div>
-      </div>
-    </div>
+  <%= bootstrap_form_with(model: resource, as: resource_name, url: session_path(resource_name), html: {"data-turbo": false, class: "grid", style: "--bs-columns: 1"}) do |f| %>
+    <%= f.text_field :username, autofocus: true, autocomplete: "email" %>
+    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.check_box :remember_me %>
+    <%= f.primary "Masuk" %>
   <% end %>
   <%= render "users/shared/links" %>
 </div>
