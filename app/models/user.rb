@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, presence: true
   validates :id_number, uniqueness: {scope: :user_type}
   validates :name, presence: true, length: {maximum: 128}
+  validates :phone_number, length: {maximum: 16}
 
   enum user_type: [
     :administrator,

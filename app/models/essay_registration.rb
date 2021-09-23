@@ -1,5 +1,6 @@
 class EssayRegistration < ApplicationRecord
   belongs_to :user
+
   has_one_attached :proposal_outline_file
   has_one_attached :essay_registration_form_file
   has_one_attached :kkp_report_submission_proof_file
@@ -7,8 +8,6 @@ class EssayRegistration < ApplicationRecord
   has_one_attached :payment_proof
   has_one_attached :academic_transcripts_file
 
-  validates :email, presence: true
-  validates :phone_number, presence: true
   validates :proposal_title, presence: true
   validates :proposal_outline_file, presence: true
   validates :essay_registration_form_file, presence: true
