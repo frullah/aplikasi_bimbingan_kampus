@@ -1,0 +1,2 @@
+module EssayProposalsHelper
+end

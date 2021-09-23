@@ -3,13 +3,14 @@ en:
     attributes:
       essay_registration:
         id_number: NIM
+        title: Judul proposal
+        outline_file: Berkas outline proposal
+        registration_form_file: Berkas formulir skripsi
+
   attributes:
     name: Nama
     email: Email
     phone_number: Nomor telepon
-    proposal_title: Judul proposal
-    proposal_outline_file: Berkas outline proposal
-    essay_registration_form_file: Berkas formulir skripsi
     kkp_report_submission_proof_file: Bukti pengiriman laporan kkp
     current_krs_file: Berkas KRS
     payment_proof: Bukti Pembayaran

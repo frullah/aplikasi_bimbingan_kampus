@@ -4,7 +4,7 @@ module MahasiswaMenuPresenter
   end
 
   def self.cache_key
-    "v4/menus:mahasiswa"
+    "v5/menus:mahasiswa"
   end
 
   def self.menus
@@ -24,7 +24,7 @@ module MahasiswaMenuPresenter
         id: "menu-skripsi", 
         title: "Pendaftaran Skripsi", 
         items: [
-          {href: new_essay_registration_path, text: "Daftar SKRIPSI" },
+          {href: new_essay_proposals_path, text: "Daftar SKRIPSI" },
           {href: "#status_nota_dinas_skripsi", text: "Status Nota Dinas SKRIPSI" },
         ]
       },
