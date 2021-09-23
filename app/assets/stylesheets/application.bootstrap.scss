@@ -1,4 +1,9 @@
-@use 'bootstrap/scss/bootstrap';
+// DOES NOT WORK
+
+@use 'bootstrap/scss/bootstrap' with (
+  $enable-grid-classes: false,
+  $enable-cssgrid: true,
+);
 
 @use "./custom.css";
 

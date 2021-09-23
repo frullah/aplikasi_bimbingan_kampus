@@ -12,12 +12,12 @@ RSpec.describe User, type: :model do
       it { expect(user).to validate_uniqueness_of(:username) }
       it {
         expect(user).to validate_uniqueness_of(:id_number)
-          .scoped_to(:username)
+          .scoped_to(:user_type)
       }
     end
   end
 
-  describe "#tyoe" do
+  describe "#type" do
     it {
       is_expected.to define_enum_for(:user_type)
         .with_values([:administrator, :dosen, :mahasiswa]) 

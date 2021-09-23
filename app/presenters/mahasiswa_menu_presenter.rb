@@ -1,6 +1,10 @@
 module MahasiswaMenuPresenter
+  class << self
+    include Rails.application.routes.url_helpers
+  end
+
   def self.cache_key
-    "menus:mahasiswa"
+    "v4/menus:mahasiswa"
   end
 
   def self.menus
@@ -20,7 +24,7 @@ module MahasiswaMenuPresenter
         id: "menu-skripsi", 
         title: "Pendaftaran Skripsi", 
         items: [
-          {href: "#daftar_skripsi", text: "Daftar SKRIPSI" },
+          {href: new_essay_registration_path, text: "Daftar SKRIPSI" },
           {href: "#status_nota_dinas_skripsi", text: "Status Nota Dinas SKRIPSI" },
         ]
       },

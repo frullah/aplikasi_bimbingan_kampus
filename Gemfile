@@ -44,7 +44,6 @@ gem "bootsnap", ">= 1.4.4", require: false
 
 group :development, :test do
   # Start debugger with binding.b [https://github.com/ruby/debug]
-  gem "debug", ">= 1.0.0", platforms: %i[ mri mingw x64_mingw ]
 end
 
 group :development do
@@ -55,7 +54,7 @@ group :development do
   # gem "rack-mini-profiler", ">= 2.3.3"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  gem "spring"
+  gem "spring", github: "rails/spring", branch: "7ca995584bedb11e61c529ae066b1172cf263c60"
 end
 
 group :test do
@@ -94,8 +93,10 @@ group :development, :test do
   gem "factory_bot_rails"
 end
 
-gem "bootstrap_form", "~> 4.5"
+gem "bootstrap_form", github: "bootstrap-ruby/bootstrap_form", branch: "bootstrap-5"
 
 gem "pry", "~> 0.14.1"
 
 gem "avo", "~> 1.13"
+
+gem "activestorage-validator", "~> 0.1.4"

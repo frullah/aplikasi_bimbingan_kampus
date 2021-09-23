@@ -1,0 +1,2 @@
+module EssayRegistrationsHelper
+end

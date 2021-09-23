@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resource :essay_registration, only: [:new, :create]
+  # resolve('EssayRegistration') { [:essay_registration] }
+
   mount Avo::Engine, at: Avo.configuration.root_path
   devise_for :users, path: "auth", controllers: {
     sessions: 'users/sessions'

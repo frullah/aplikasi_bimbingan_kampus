@@ -1,0 +1,19 @@
+<h2 class="text-center">Daftar Skripsi</h2>
+
+<%= bootstrap_form_with(url: {action: :create}, model: @model, html: {class: "grid", style: "--bs-columns: 1; --bs-gap: 0"}) do |f| %>
+  <%= f.telephone_field :id_number, required: true, readonly: true, value: current_user&.id_number %>
+  <%= f.text_field :name,
+    required: true,
+    readonly: true,
+    value: current_user&.name %>
+  <%= f.email_field :email, required: true %>
+  <%= f.telephone_field :phone_number, required: true %>
+  <%= f.telephone_field :proposal_title, required: true %>
+  <%= f.file_field :proposal_outline_file, required: true %>
+  <%= f.file_field :essay_registration_form_file, required: true %>
+  <%= f.file_field :kkp_report_submission_proof_file, required: true %>
+  <%= f.file_field :current_krs_file, required: true %>
+  <%= f.file_field :payment_proof, required: true %>
+  <%= f.file_field :academic_transcripts_file, required: true %>
+  <%= f.primary "Kirim", render_as_button: true %>
+<% end %>
