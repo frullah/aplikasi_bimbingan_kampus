@@ -1,5 +1,3 @@
 FactoryBot.define do
-  factory :mahasiswa do
-    
-  end
+  factory :mahasiswa, parent: :user, class: "Mahasiswa"
 end

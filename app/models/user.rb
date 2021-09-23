@@ -15,7 +15,7 @@ class User < ApplicationRecord
   ]
 
   def menu_presenter
-    case user_type
+    case user_type.to_s
     when "administrator"
       AdministratorMenuPresenter
     when "dosen"

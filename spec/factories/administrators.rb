@@ -1,5 +1,3 @@
 FactoryBot.define do
-  factory :administrator do
-    
-  end
+  factory :administrator, parent: :user, class: "Administrator"
 end
