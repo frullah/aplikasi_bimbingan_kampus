@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe EssayProposal, type: :model do
   describe "validations" do
@@ -11,5 +11,5 @@ RSpec.describe EssayProposal, type: :model do
     it { should have_one_attached(:payment_proof) }
     it { should have_one_attached(:academic_transcripts_file) }
   end
-  # if attachment is valid then 
+  # if attachment is valid then
 end

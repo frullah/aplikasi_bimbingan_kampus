@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "EssayProposals", type: :request do
   let(:path) { new_essay_proposals_path }
@@ -6,7 +6,7 @@ RSpec.describe "EssayProposals", type: :request do
   describe "GET /new" do
     shared_examples "require authentication" do
       # let(:request_method) { defined?(:request_method) ? request_method : :get }
-      # TODO: how to not 
+      # TODO: review about this method usage. should i use let(:request_method) (shadowing let) ?
       def do_authentication_request
         # send(request_method.try(:itself, :get), path)
         send(defined?(request_method) ? request_method : :get, path)
@@ -22,19 +22,22 @@ RSpec.describe "EssayProposals", type: :request do
       end
     end
 
-    shared_examples "require authorization" do |user_type|
+    shared_examples "require authorization" do |expected_user_type|
       include_examples "require authentication"
 
-      it "require authorization as #{user_type}" do
-        sign_in create(:user, user_type: user_type)
+      it "require authorization as #{expected_user_type}" do
+        sign_in create(:user, user_type: expected_user_type)
 
         do_authentication_request
         expect(response).not_to have_http_status(:forbidden)
 
-        # sign_in create(:user, user_type: user_type)
-
-        # get path
-        # expect(response).not_to have_http_status(:forbidden)
+        # TODO: fix "Validation failed: Id number has already been taken"
+        # User.user_types.each_key do |user_type|
+        #   next if expected_user_type == user_type
+        #   sign_in create(:user, user_type: expected_user_type)
+        #   do_authentication_request
+        #   expect(response).to have_http_status(:forbidden)
+        # end
       end
     end
 

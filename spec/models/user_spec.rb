@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe User, type: :model do
   let(:user) { build(:user) }
@@ -25,7 +25,7 @@ RSpec.describe User, type: :model do
     describe "#type" do
       it {
         is_expected.to define_enum_for(:user_type)
-          .with_values([:administrator, :dosen, :mahasiswa]) 
+          .with_values([:administrator, :dosen, :mahasiswa])
       }
     end
   end

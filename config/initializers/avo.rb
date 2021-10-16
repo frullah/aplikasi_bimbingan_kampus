@@ -1,9 +1,9 @@
 Avo.configure do |config|
   ## == Routing ==
-  config.root_path = '/avo'
+  config.root_path = "/avo"
 
   ## == Licensing ==
-  config.license = 'community'
+  config.license = "community"
   # config.license_key = ENV['AVO_LICENSE_KEY']
 
   ## == Set the context ==
@@ -46,7 +46,6 @@ Avo.configure do |config|
   # config.search_debounce = 300
   # config.view_component_path = "app/components"
   # config.display_license_request_timeout_error = true
-
 
   # Where should the user be redirected when he hits the `/avo` url
   # config.home_path = nil

@@ -11,12 +11,8 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  def create
-    super
-  rescue
-    puts 121212
-    binding.b
-  end
+  # def create
+  # end
 
   # DELETE /resource/sign_out
   # def destroy

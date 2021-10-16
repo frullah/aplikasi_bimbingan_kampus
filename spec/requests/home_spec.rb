@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Home Page", type: :request do
   context "visit as mahasiswa" do

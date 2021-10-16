@@ -1,4 +1,3 @@
-
 module AdministratorMenuPresenter
   class << self
     include Rails.application.routes.url_helpers
@@ -13,19 +12,19 @@ module AdministratorMenuPresenter
       {href: "/", text: "Admin"},
       {href: "/", text: "Beranda"},
       {
-        id: "menu-peserta-kkp", 
+        id: "menu-peserta-kkp",
         title: "Data Peserta KKP",
         items: [
           {href: "#", text: "Berkas Peserta KKP"},
-          {href: "#status_nota_dinas_kkp", text: "Nilai Peserta KKP" },
+          {href: "#status_nota_dinas_kkp", text: "Nilai Peserta KKP"}
         ]
       },
       {
-        id: "menu-skripsi", 
+        id: "menu-skripsi",
         title: "Data Peserta SKRIPSI",
         items: [
-          {href: "#daftar_skripsi", text: "Berkas Peserta SKRIPSI" },
-          {href: "#status_nota_dinas_skripsi", text: "Nilai Peserta SKRIPSI" },
+          {href: "#daftar_skripsi", text: "Berkas Peserta SKRIPSI"},
+          {href: "#status_nota_dinas_skripsi", text: "Nilai Peserta SKRIPSI"}
         ]
       },
       {href: "about", text: "Data Dosen Pembimbing"},
