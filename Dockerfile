@@ -15,4 +15,13 @@ RUN bundle install
 
 COPY . /app/
 
+
+RUN apk add nodejs
+# RUN apk add curl bash
+# RUN curl -fsSL https://fnm.vercel.app/install | bash
+
+RUN export RAILS_ENV=production
+
+RUN apk add tzdata
+
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
