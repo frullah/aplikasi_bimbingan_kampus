@@ -1,3 +1,8 @@
 FROM ruby:3.0.1-alpine
 
-RUN "bundle install"
+WORKDIR /app
+
+COPY Gemfile Gemfile.lock /app/
+RUN bundle install
+
+
