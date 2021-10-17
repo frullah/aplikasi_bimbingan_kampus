@@ -1,31 +1,14 @@
 <h2 class="text-center">Edit Data Pendaftaran Skripsi</h2>
-<div>
-  <div class="d-flex mb-3">
-    <div class="me-1">Status:</div>
-    <%= @model.status %>
-  </div>
-  <% if @model.revision_message.present? %>
-    <div>
-      Keterangan
-      <p class="border p-1" style="min-height: 180px; ">
-        <%= @model.revision_message %>
-      </p>
-    </div>
-  <% end %>
-</div>
-<%= bootstrap_form_with(model: current_user, url: "#") do |f| %>
-  <%= f.telephone_field :id_number, name: nil, readonly: true %>
-  <%= f.text_field :name, readonly: true %>
-  <%= f.email_field :email, readonly: true %>
-  <%= f.telephone_field :phone_number, readonly: true %>
-<% end %>
+<%= render "registration_status" %>
+
+<%= render "user_form" %>
 <%= bootstrap_form_with(url: {action: :update}, model: @model) do |f| %>
   <%= f.text_field :title %>
-  <%= f.file_field :outline_file, accept: "application/pdf" %>
-  <%= f.file_field :form_file, accept: "application/pdf" %>
-  <%= f.file_field :kkp_report_submission_proof_file, accept: "application/pdf" %>
-  <%= f.file_field :current_krs_file, accept: "application/pdf" %>
-  <%= f.file_field :payment_proof_file, accept: "application/pdf,image/png,image/jpeg" %>
-  <%= f.file_field :academic_transcript_file, accept: "application/pdf" %>
+  <%= f.file_field_with_preview(:outline_file, accept: "application/pdf") %>
+  <%= f.file_field_with_preview :form_file, accept: "application/pdf" %>
+  <%= f.file_field_with_preview :kkp_report_submission_proof_file, accept: "application/pdf" %>
+  <%= f.file_field_with_preview :current_krs_file, accept: "application/pdf" %>
+  <%= f.file_field_with_preview :payment_proof_file, accept: "application/pdf,image/png,image/jpeg" %>
+  <%= f.file_field_with_preview :academic_transcript_file, accept: "application/pdf" %>
   <%= f.primary "Perbarui", render_as_button: true, extra_class: "w-100" %>
 <% end %>

@@ -1,0 +1,14 @@
+<div>
+  <div class="d-flex mb-3">
+    <div class="me-1">Status:</div>
+    <%= @model.status %>
+  </div>
+  <% if @model.revision_message.present? %>
+    <div>
+      Keterangan
+      <p class="border p-1" style="min-height: 180px; ">
+        <%= @model.revision_message %>
+      </p>
+    </div>
+  <% end %>
+</div>

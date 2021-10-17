@@ -1,11 +1,6 @@
 
 <h2 class="text-center">Mendaftar Skripsi</h2>
-<%= bootstrap_form_with(model: current_user, url: "#") do |f| %>
-  <%= f.telephone_field :id_number, name: nil, readonly: true %>
-  <%= f.text_field :name, readonly: true %>
-  <%= f.email_field :email, readonly: true %>
-  <%= f.telephone_field :phone_number, readonly: true %>
-<% end %>
+<%= render "user_form" %>
 <%= bootstrap_form_with(url: {action: :create}, model: @model) do |f| %>
   <%= f.text_field :title, required: true %>
   <%= f.file_field :outline_file, required: true, accept: "application/pdf" %>
