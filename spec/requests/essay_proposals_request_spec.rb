@@ -1,5 +1,6 @@
 require "rails_helper"
 
+# spec - pendaftaran skripsi
 RSpec.describe "EssayProposals", type: :request do
   let(:path) { new_essay_proposals_path }
 
@@ -43,12 +44,16 @@ RSpec.describe "EssayProposals", type: :request do
 
     include_examples "require authorization", :mahasiswa
 
-    context "not submitted" do
-      pending "add new essay proposal data"
+    context "not registered" do
+      it "can register"
     end
 
-    context "already submitted" do
-      pending "update data"
+    context "declined" do
+      it "can update data"
+    end
+
+    context "approved" do
+      it "can only see data"
     end
   end
 end
