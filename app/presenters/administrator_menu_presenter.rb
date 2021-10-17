@@ -27,10 +27,9 @@ module AdministratorMenuPresenter
           {href: "#status_nota_dinas_skripsi", text: "Nilai Peserta SKRIPSI"}
         ]
       },
-      {href: "about", text: "Data Dosen Pembimbing"},
-      {href: avo_path + "/resources/administrators", text: "Data Administrator"},
-      {href: avo_path + "/resources/dosens", text: "Data Dosen"},
+      {href: avo_path + "/resources/dosens", text: "Data Dosen Pembinmbing"},
       {href: avo_path + "/resources/mahasiswas", text: "Data Mahasiswa"},
+      {href: avo_path + "/resources/administrators", text: "Data Administrator"},
       {href: "about", text: "About"}
     ]
   end
