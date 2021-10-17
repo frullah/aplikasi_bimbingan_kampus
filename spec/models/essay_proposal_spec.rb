@@ -11,5 +11,10 @@ RSpec.describe EssayProposal, type: :model do
     it { should have_one_attached(:payment_proof_file) }
     it { should have_one_attached(:academic_transcript_file) }
   end
+
+  it {
+    is_expected.to define_enum_for(:status)
+      .with_values([:pending, :rejected, :approved])
+  }
   # if attachment is valid then
 end
