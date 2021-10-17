@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resource :about, only: [:show]
+
   resource :essay_proposals, only: [:new, :create]
   # resolve('EssayProposal') { [:essay_proposals] }
 
