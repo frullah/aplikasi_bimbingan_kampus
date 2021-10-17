@@ -19,8 +19,8 @@ class EssayProposalsController < ApplicationController
       :registration_form_file,
       :kkp_report_submission_proof_file,
       :current_krs_file,
-      :payment_proof,
-      :academic_transcripts_file
+      :payment_proof_file,
+      :academic_transcript_file
     )
   end
 end
