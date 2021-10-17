@@ -4,7 +4,7 @@ module AdministratorMenuPresenter
   end
 
   def self.cache_key
-    "v3/menus/administrator"
+    "v4/menus/administrator"
   end
 
   def self.menus
