@@ -37,7 +37,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # gem "sassc-rails", "~> 2.1"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 group :development, :test do
   gem 'factory_bot_rails'
@@ -95,3 +95,5 @@ gem 'bootstrap_form', github: 'bootstrap-ruby/bootstrap_form', branch: 'bootstra
 gem 'avo', '~> 1.13'
 
 gem 'activestorage-validator', '~> 0.1.4'
+
+gem "draper", "~> 4.0"

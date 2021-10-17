@@ -1,3 +1,11 @@
-<div class="mx-auto bg-white p-3" style="max-width: 560px">
-  <%= render "unregistered" %>
-</div>
+<%= render(SmallContainerComponent.new) do %>
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "alert alert-#{key}" %>
+  <% end %>
+
+  <% if current_user.essay_proposal.nil? %>
+    <%= render "unregistered" %>
+  <% else %>
+    <%= render "registered" %>
+  <% end %>
+<% end %>

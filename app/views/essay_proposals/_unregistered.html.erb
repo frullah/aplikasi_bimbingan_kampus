@@ -1,13 +1,12 @@
 
 <h2 class="text-center">Mendaftar Skripsi</h2>
-<%= bootstrap_form_with(url: {action: :create}, model: @model, html: {class: "grid", style: "--bs-columns: 1; --bs-gap: 0"}) do |f| %>
-  <%= f.telephone_field :id_number, required: true, readonly: true, value: current_user&.id_number %>
-  <%= f.text_field :name,
-    required: true,
-    readonly: true,
-    value: current_user&.name %>
-  <%= f.email_field :email, required: true %>
-  <%= f.telephone_field :phone_number, required: true %>
+<%= bootstrap_form_with(model: current_user, url: "#") do |f| %>
+  <%= f.telephone_field :id_number, name: nil, readonly: true %>
+  <%= f.text_field :name, readonly: true %>
+  <%= f.email_field :email, readonly: true %>
+  <%= f.telephone_field :phone_number, readonly: true %>
+<% end %>
+<%= bootstrap_form_with(url: {action: :create}, model: @model) do |f| %>
   <%= f.text_field :title, required: true %>
   <%= f.file_field :outline_file, required: true, accept: "application/pdf" %>
   <%= f.file_field :form_file, required: true, accept: "application/pdf" %>
@@ -15,5 +14,5 @@
   <%= f.file_field :current_krs_file, required: true, accept: "application/pdf" %>
   <%= f.file_field :payment_proof_file, required: true, accept: "application/pdf,image/png,image/jpeg" %>
   <%= f.file_field :academic_transcript_file, required: true, accept: "application/pdf" %>
-  <%= f.primary "Mendaftar", render_as_button: true %>
+  <%= f.primary "Mendaftar", render_as_button: true, extra_class: "w-100" %>
 <% end %>

@@ -8,6 +8,8 @@ class EssayProposal < ApplicationRecord
   has_one_attached :payment_proof_file
   has_one_attached :academic_transcript_file
 
+  has_rich_text :revision_message
+
   # TODO: add activestorage validations, only accept PDF file
   validates :title, presence: true
   validates :outline_file, presence: true

@@ -8,6 +8,7 @@ en:
         form_file: Berkas formulir skripsi
         payment_proof_file: Berkas bukti pembayaran
         academic_transcript_file: Berkas transkrip nilai
+        revision_message: Keterangan
 
   attributes:
     id_number: NIM

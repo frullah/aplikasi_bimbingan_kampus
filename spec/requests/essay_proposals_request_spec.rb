@@ -45,6 +45,10 @@ RSpec.describe "EssayProposals", type: :request do
     include_examples "require authorization", :mahasiswa
 
     context "not registered" do
+      it "does not see status and description" do
+        get new_essay_proposals_path
+      end
+
       it "can register"
     end
 
