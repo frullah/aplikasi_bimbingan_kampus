@@ -70,7 +70,9 @@ end
 
 gem 'rexml'
 
-gem 'devise', git: 'https://github.com/strobilomyces/devise.git', branch: 'patch-1'
+gem 'devise',
+  git: 'https://github.com/heartcombo/devise.git',
+  branch: '8593801130f2df94a50863b5db535c272b00efe1'
 
 gem 'bootstrap', '~> 5.1'
 
