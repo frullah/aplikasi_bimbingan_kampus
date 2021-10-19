@@ -2,9 +2,11 @@ class EssayProposalsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @model = current_user.essay_proposal || EssayProposal.new
-
-    @model = @model.decorate
+    @model = if current_user.essay_proposal.nil?
+      EssayProposal.new
+    else
+      current_user.essay_proposal.decorate
+    end
   end
 
   # TODO: move new to edit when current_user has essay_proposal

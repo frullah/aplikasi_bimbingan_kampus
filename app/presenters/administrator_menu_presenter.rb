@@ -4,7 +4,7 @@ module AdministratorMenuPresenter
   end
 
   def self.cache_key
-    "v4/menus/administrator"
+    "v5/menus/administrator"
   end
 
   def self.menus
@@ -30,7 +30,7 @@ module AdministratorMenuPresenter
       {href: avo_path + "/resources/dosens", text: "Data Dosen Pembinmbing"},
       {href: avo_path + "/resources/mahasiswas", text: "Data Mahasiswa"},
       {href: avo_path + "/resources/administrators", text: "Data Administrator"},
-      {href: "about", text: "About"}
+      {href: about_path, text: "About"}
     ]
   end
 end
