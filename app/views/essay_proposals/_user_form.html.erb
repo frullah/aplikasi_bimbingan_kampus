@@ -1,0 +1,6 @@
+<%= bootstrap_form_with(model: current_user, url: "#") do |f| %>
+  <%= f.telephone_field :id_number, name: nil, readonly: true %>
+  <%= f.text_field :name, readonly: true %>
+  <%= f.email_field :email, readonly: true %>
+  <%= f.telephone_field :phone_number, readonly: true %>
+<% end %>

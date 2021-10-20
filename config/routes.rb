@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resource :about, only: [:show]
 
-  resource :essay_proposals, only: [:new, :create]
+  resources :essay_proposals, only: [:index, :show, :new, :create, :update, :destroy] do
+    get :approve
+
+    get :rejection
+    patch :reject
+  end
   # resolve('EssayProposal') { [:essay_proposals] }
 
   mount Avo::Engine, at: Avo.configuration.root_path

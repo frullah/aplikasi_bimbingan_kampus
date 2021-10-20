@@ -1,17 +1,21 @@
 en:
-  activemodel:
+  activerecord:
     attributes:
-      essay_registration:
+      essay_proposal:
         id_number: NIM
         title: Judul proposal
         outline_file: Berkas outline proposal
-        registration_form_file: Berkas formulir skripsi
+        form_file: Berkas formulir skripsi
+        payment_proof_file: Berkas bukti pembayaran
+        academic_transcript_file: Berkas transkrip nilai
+        revision_message: Keterangan
 
   attributes:
+    id_number: NIM
     name: Nama
     email: Email
     phone_number: Nomor telepon
-    kkp_report_submission_proof_file: Bukti pengiriman laporan kkp
+    kkp_report_submission_proof_file: Bukti pengiriman laporan KKP
     current_krs_file: Berkas KRS
     payment_proof: Bukti Pembayaran
     academic_transcripts_file: Berkas transkrip akademik

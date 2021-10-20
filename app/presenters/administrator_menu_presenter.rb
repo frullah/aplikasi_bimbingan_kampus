@@ -4,7 +4,7 @@ module AdministratorMenuPresenter
   end
 
   def self.cache_key
-    "v4/menus/administrator"
+    "v7/menus/administrator"
   end
 
   def self.menus
@@ -23,14 +23,14 @@ module AdministratorMenuPresenter
         id: "menu-skripsi",
         title: "Data Peserta SKRIPSI",
         items: [
-          {href: "#daftar_skripsi", text: "Berkas Peserta SKRIPSI"},
+          {href: essay_proposals_path, text: "Berkas Peserta SKRIPSI"},
           {href: "#status_nota_dinas_skripsi", text: "Nilai Peserta SKRIPSI"}
         ]
       },
       {href: avo_path + "/resources/dosens", text: "Data Dosen Pembinmbing"},
       {href: avo_path + "/resources/mahasiswas", text: "Data Mahasiswa"},
       {href: avo_path + "/resources/administrators", text: "Data Administrator"},
-      {href: "about", text: "About"}
+      {href: about_path, text: "About"}
     ]
   end
 end

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container bg-white p-3">
+  <%= render(FlashComponent.new) %>
+  <h2 class="text-center">Berkas Peserta Skripsi</h2>
+
+  <table id="essays" class="w-100">
+    <thead>
+      <th>No</th>
+      <th>Nama Lengkap</th>
+      <th>Judul Proposal</th>
+      <th>Action</th>
+      <th>Status</th>
+    </thead>
+    <tbody>
+      <% @essay_proposals.each_with_index do |essay_proposal, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= essay_proposal.user.name %></td>
+          <td><%= essay_proposal.title %></td>
+          <td>
+            <%= link_to "Cek", essay_proposal, class: "btn btn-primary" %>
+            <%= link_to "Hapus", essay_proposal_path(essay_proposal),
+              class: "btn btn-danger",
+              method: :delete,
+              "data-confirm": "Hapus data ?" %>
+          </td>
+          <td><%= essay_proposal.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

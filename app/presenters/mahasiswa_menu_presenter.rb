@@ -24,11 +24,11 @@ module MahasiswaMenuPresenter
         id: "menu-skripsi",
         title: "Pendaftaran Skripsi",
         items: [
-          {href: new_essay_proposals_path, text: "Daftar SKRIPSI"},
+          {href: new_essay_proposal_path, text: "Daftar SKRIPSI"},
           {href: "#status_nota_dinas_skripsi", text: "Status Nota Dinas SKRIPSI"}
         ]
       },
-      {href: "about", text: "About"}
+      {href: about_path, text: "About"}
     ]
   end
 end

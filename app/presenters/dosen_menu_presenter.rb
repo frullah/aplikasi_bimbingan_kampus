@@ -1,6 +1,10 @@
 module DosenMenuPresenter
+  class << self
+    include Rails.application.routes.url_helpers
+  end
+
   def self.cache_key
-    "menus/dosen"
+    "v1/menus/dosen"
   end
 
   def self.menus
@@ -24,7 +28,7 @@ module DosenMenuPresenter
           {href: "#status_nota_dinas_skripsi", text: "Status Nota Dinas SKRIPSI"}
         ]
       },
-      {href: "about", text: "About"}
+      {href: about_path, text: "About"}
     ]
   end
 end

@@ -1,0 +1,14 @@
+<div>
+  <div class="d-flex mb-3" aria-label="status">
+    <div class="me-1">Status:</div>
+    <%= @essay_proposal.status %>
+  </div>
+  <% if @essay_proposal.rejected? && @essay_proposal.revision_message %>
+    <div aria-label="keterangan">
+      Keterangan
+      <div class="border p-2" style="min-height: 180px; ">
+        <%= @essay_proposal.revision_message %>
+      </div>
+    </div>
+  <% end %>
+</div>
