@@ -1,0 +1,13 @@
+<h2 class="text-center">Data Pendaftaran Skripsi</h2>
+<%= render "registration_status" %>
+
+<%= render "user_form" %>
+<%= bootstrap_form_with(model: @essay_proposal, html: { onsubmit: "return false" }) do |f| %>
+  <%= f.text_field :title, readonly: true %>
+  <%= f.file_preview(:outline_file) %>
+  <%= f.file_preview :form_file %>
+  <%= f.file_preview :kkp_report_submission_proof_file %>
+  <%= f.file_preview :current_krs_file %>
+  <%= f.file_preview :payment_proof_file %>
+  <%= f.file_preview :academic_transcript_file %>
+<% end %>

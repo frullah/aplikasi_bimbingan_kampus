@@ -2,7 +2,7 @@ require "rails_helper"
 
 # spec - pendaftaran skripsi
 RSpec.describe "EssayProposals", type: :request do
-  let(:path) { new_essay_proposals_path }
+  let(:path) { new_essay_proposal_path }
 
   describe "GET /new" do
     shared_examples "require authentication" do
@@ -45,8 +45,15 @@ RSpec.describe "EssayProposals", type: :request do
     include_examples "require authorization", :mahasiswa
 
     context "not registered" do
-      it "does not see status and description" do
-        get new_essay_proposals_path
+      fit "show not description" do
+        sign_in create(:user, user_type: :mahasiswa)
+        get essay_proposals_path
+        expect(response.body).not_to include("Keterangan")
+      end
+      
+      fit "does not description" do
+        get essay_proposals_path
+        expect(response.body).not_to include("Keterangan")
       end
 
       it "can register"

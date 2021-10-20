@@ -1,4 +1,8 @@
 module DosenMenuPresenter
+  class << self
+    include Rails.application.routes.url_helpers
+  end
+
   def self.cache_key
     "v1/menus/dosen"
   end

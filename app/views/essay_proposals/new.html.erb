@@ -1,10 +1,10 @@
 <%= render(SmallContainerComponent.new) do %>
-  <% flash.each do |key, value| %>
-    <%= content_tag :div, value, class: "alert alert-#{key}" %>
-  <% end %>
+  <%= render(FlashComponent.new) %>
 
   <% if current_user.essay_proposal.nil? %>
     <%= render "unregistered" %>
+  <% elsif current_user.essay_proposal.status.to_sym == :approved %>
+    <%= render "approved" %>
   <% else %>
     <%= render "registered" %>
   <% end %>

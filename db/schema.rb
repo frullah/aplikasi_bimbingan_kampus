@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_17_064621) do
+ActiveRecord::Schema.define(version: 2021_10_20_021421) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -64,6 +64,11 @@ ActiveRecord::Schema.define(version: 2021_10_17_064621) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "status", limit: 1, default: 0, null: false
     t.index ["user_id"], name: "index_essay_proposals_on_user_id"
+  end
+
+  create_table "essays", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "mahasiswas", force: :cascade do |t|

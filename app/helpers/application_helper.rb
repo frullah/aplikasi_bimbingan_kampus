@@ -9,4 +9,11 @@ module ApplicationHelper
       yield(f)
     end
   end
+
+  def nosubmit_bootstrap_form_with(**options, &block)
+    options[:html] ||= {}
+    options[:html][:onsubmit] = "return false"
+    options[:url] = ""
+    bootstrap_form_with(**options, &block)
+  end
 end
