@@ -6,22 +6,7 @@
     <h2 class="text-center">Cek Berkas Peserta Skripsi</h2>
     <%= render "registration_status" %>
 
-    <%= bootstrap_form_with(model: current_user, url: "", html: { onsubmit: "return false" }) do |f| %>
-      <%= f.text_field :id_number, readonly: true %>
-      <%= f.text_field :name, readonly: true %>
-      <%= f.text_field :email, readonly: true %>
-      <%= f.text_field :phone_number, readonly: true %>
-    <% end %>
-
-    <%= bootstrap_form_with(model: @essay_proposal, html: { onsubmit: "return false" }) do |f| %>
-      <%= f.text_field :title, readonly: true %>
-      <%= f.file_preview(:outline_file) %>
-      <%= f.file_preview :form_file %>
-      <%= f.file_preview :kkp_report_submission_proof_file %>
-      <%= f.file_preview :current_krs_file %>
-      <%= f.file_preview :payment_proof_file %>
-      <%= f.file_preview :academic_transcript_file %>
-    <% end %>
+    <%= render "fields" %>
 
     <div class="grid" style="--bs-columns: 1; --bs-gap: 1rem">
       <%= link_to "Tolak",
@@ -29,9 +14,10 @@
         "data-disable-with": "Menerima...",
         "data-turbo-frame": "_top",
         class: "btn btn-danger" %>
-      <%= link_to "Terima",
-        essay_proposal_approve_path(@essay_proposal),
+      <%= link_to "Setujui",
+        essay_proposal_approval_path(@essay_proposal),
         "data-disable-with": "Menerima...",
+        "data-turbo-frame": "_top",
         class: "btn btn-primary" %>
     </div>
   <% end %>

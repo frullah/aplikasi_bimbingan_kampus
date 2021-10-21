@@ -50,8 +50,9 @@ RSpec.describe "EssayProposals", type: :request do
         get essay_proposals_path
         expect(response.body).not_to include("Keterangan")
       end
-      
+
       fit "does not description" do
+        sign_in create(:user, user_type: :mahasiswa)
         get essay_proposals_path
         expect(response.body).not_to include("Keterangan")
       end

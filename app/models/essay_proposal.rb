@@ -8,6 +8,9 @@ class EssayProposal < ApplicationRecord
   has_one_attached :payment_proof_file
   has_one_attached :academic_transcript_file
 
+  # TODO: add spec
+  has_one_attached :official_memo
+
   has_rich_text :revision_message
 
   # TODO: add activestorage validations, only accept PDF file
@@ -18,6 +21,8 @@ class EssayProposal < ApplicationRecord
   validates :current_krs_file, presence: true
   validates :payment_proof_file, presence: true
   validates :academic_transcript_file, presence: true
+
+  validates :official_memo, presence: true
 
   enum status: [:pending, :rejected, :approved]
 end

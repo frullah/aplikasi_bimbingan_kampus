@@ -1,6 +1,6 @@
 class EssayProposalsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_essay_proposal, only: [:approve, :rejection, :reject]
+  before_action :set_essay_proposal, only: [:approval, :approve, :rejection, :reject]
 
   def index
     @essay_proposals = EssayProposal.all.decorate
@@ -10,14 +10,17 @@ class EssayProposalsController < ApplicationController
     @essay_proposal = EssayProposal.find(params[:id]).decorate
   end
 
-  def approve
-    if @essay_proposal.update(status: :approved)
-      flash.now[:info] = "Proposal skripsi diterima"
-    else
-      flash.now[:danger] = "Proses penerimaan proposal skripsi gagal"
-    end
+  def approval
+    @essay_proposal = @essay_proposal.decorate
+  end
 
-    render "show"
+  def approve
+    param = params.require(:essay_proposal).permit(:official_memo)
+    if @essay_proposal.update(status: :approved, **param)
+      redirect_to @essay_proposal, info: "Proposal skripsi diterima"
+    else
+      redirect_to @essay_proposal, info: "Proses penerimaan proposal skripsi gagal"
+    end
   end
 
   def rejection

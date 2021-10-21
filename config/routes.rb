@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resource :about, only: [:show]
 
   resources :essay_proposals, only: [:index, :show, :new, :create, :update, :destroy] do
-    get :approve
+    get :approval
+    patch :approve
 
     get :rejection
     patch :reject

@@ -1,0 +1,17 @@
+
+<%= bootstrap_form_with(model: current_user, url: "", html: { onsubmit: "return false" }) do |f| %>
+  <%= f.text_field :id_number, readonly: true %>
+  <%= f.text_field :name, readonly: true %>
+  <%= f.text_field :email, readonly: true %>
+  <%= f.text_field :phone_number, readonly: true %>
+<% end %>
+
+<%= bootstrap_form_with(model: @essay_proposal, html: { onsubmit: "return false" }) do |f| %>
+  <%= f.text_field :title, readonly: true %>
+  <%= f.file_preview(:outline_file) %>
+  <%= f.file_preview :form_file %>
+  <%= f.file_preview :kkp_report_submission_proof_file %>
+  <%= f.file_preview :current_krs_file %>
+  <%= f.file_preview :payment_proof_file %>
+  <%= f.file_preview :academic_transcript_file %>
+<% end %>
