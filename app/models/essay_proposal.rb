@@ -22,7 +22,5 @@ class EssayProposal < ApplicationRecord
   validates :payment_proof_file, presence: true
   validates :academic_transcript_file, presence: true
 
-  validates :official_memo, presence: true
-
   enum status: [:pending, :rejected, :approved]
 end

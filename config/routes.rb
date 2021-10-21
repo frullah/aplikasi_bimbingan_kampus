@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
   resource :about, only: [:show]
 
-  resources :essay_proposals, only: [:index, :show, :new, :create, :update, :destroy] do
+  resources :essay_proposals do
+    get :approval
+    patch :approve
+
+    get :rejection
+    patch :reject
+  end
+
+  resources :kkp_registrations do
     get :approval
     patch :approve
 

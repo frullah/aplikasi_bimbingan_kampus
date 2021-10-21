@@ -4,7 +4,7 @@ module MahasiswaMenuPresenter
   end
 
   def self.cache_key
-    "v5/menus:mahasiswa"
+    "v6/menus:mahasiswa"
   end
 
   def self.menus
@@ -15,8 +15,7 @@ module MahasiswaMenuPresenter
         id: "menu-kkp",
         title: "Pendaftaran KKP",
         items: [
-          {href: "#", text: "Daftar KKP"},
-          {href: "#status_nota_dinas_kkp", text: "Status Nota Dinas KKP"},
+          {href: new_kkp_registration_path, text: "Daftar KKP"},
           {href: "#bimbingan_kkp&nim=#{@current_user&.id_number}", text: "Bimbingan KKP"}
         ]
       },
@@ -25,7 +24,6 @@ module MahasiswaMenuPresenter
         title: "Pendaftaran Skripsi",
         items: [
           {href: new_essay_proposal_path, text: "Daftar SKRIPSI"},
-          {href: "#status_nota_dinas_skripsi", text: "Status Nota Dinas SKRIPSI"}
         ]
       },
       {href: about_path, text: "About"}

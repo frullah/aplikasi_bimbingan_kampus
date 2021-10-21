@@ -10,5 +10,9 @@
         <%= @essay_proposal.revision_message %>
       </div>
     </div>
+  <% elsif @essay_proposal.approved? && @essay_proposal.official_memo.present? %>
+    <%= nosubmit_bootstrap_form_with(model: @essay_proposal) do |f| %>
+        <%= f.file_preview :official_memo %>
+    <% end %>
   <% end %>
 </div>

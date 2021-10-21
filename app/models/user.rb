@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :phone_number, length: {maximum: 16}
 
   has_one :essay_proposal
+  has_one :kkp_registration
 
   enum user_type: [
     :administrator,

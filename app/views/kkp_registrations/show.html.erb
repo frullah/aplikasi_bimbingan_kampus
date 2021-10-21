@@ -1,0 +1,24 @@
+<%= turbo_frame_tag dom_id(@kkp_registration) do %>
+  <%= render(SmallContainerComponent.new) do %>
+    <%= render(FlashComponent.new) %>
+    <%= link_to "< Kembali", kkp_registrations_path, "data-turbo-frame": "_top", class: "btn btn-link fw-medium" %>
+
+    <h2 class="text-center">Cek Berkas Peserta KKP</h2>
+    <%= render "registration_status" %>
+
+    <%= render "fields" %>
+
+    <div class="grid" style="--bs-columns: 1; --bs-gap: 1rem">
+      <%= link_to "Tolak",
+        kkp_registration_rejection_path(@kkp_registration),
+        "data-disable-with": "Menerima...",
+        "data-turbo-frame": "_top",
+        class: "btn btn-danger" %>
+      <%= link_to "Setujui",
+        kkp_registration_approval_path(@kkp_registration),
+        "data-disable-with": "Menerima...",
+        "data-turbo-frame": "_top",
+        class: "btn btn-primary" %>
+    </div>
+  <% end %>
+<% end %>

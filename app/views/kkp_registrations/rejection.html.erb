@@ -1,0 +1,16 @@
+<%= render(SmallContainerComponent.new) do %>
+  
+  <%= render(FlashComponent.new) %>
+  <h2 class="text-center">Penolakan Berkas Peserta KKP</h2>
+  <%= render "registration_status" %>
+
+  <%= nosubmit_bootstrap_form_with(model: current_user) do |f| %>
+    <%= f.text_field :id_number, readonly: true %>
+    <%= f.text_field :name, readonly: true %>
+  <% end %>
+
+  <%= bootstrap_form_with(model: @kkp_registration, url: {action: :reject}) do |f| %>
+    <%= f.rich_text_area :revision_message, required: true %>
+    <%= f.button "Tolak", extra_class: "btn-danger w-100"%>
+  <% end %>
+<% end %>

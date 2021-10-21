@@ -1,4 +1,4 @@
-class EssayProposalDecorator < Draper::Decorator
+class KkpRegistrationDecorator < Draper::Decorator
   delegate_all
 
   include StatusDecoratorTrait

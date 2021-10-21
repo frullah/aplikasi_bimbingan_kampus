@@ -5,7 +5,14 @@ en:
         id_number: NIM
         title: Judul proposal
         outline_file: Berkas outline proposal
-        form_file: Berkas formulir skripsi
+        form_file: Berkas formulir pendafataran skripsi
+        payment_proof_file: Berkas bukti pembayaran
+        academic_transcript_file: Berkas transkrip nilai
+        revision_message: Keterangan
+      kkp_registration:
+        id_number: NIM
+        entity_name: Nama perusahaan
+        registration_form_file: Berkas formulir pendaftaran KKP
         payment_proof_file: Berkas bukti pembayaran
         academic_transcript_file: Berkas transkrip nilai
         revision_message: Keterangan

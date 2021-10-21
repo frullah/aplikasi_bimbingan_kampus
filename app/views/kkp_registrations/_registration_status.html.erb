@@ -1,0 +1,18 @@
+<div>
+  <div class="d-flex mb-3" aria-label="status">
+    <div class="me-1">Status:</div>
+    <%= @kkp_registration.status %>
+  </div>
+  <% if @kkp_registration.rejected? && @kkp_registration.revision_message %>
+    <div aria-label="keterangan">
+      Keterangan
+      <div class="border p-2" style="min-height: 180px; ">
+        <%= @kkp_registration.revision_message %>
+      </div>
+    </div>
+  <% elsif @kkp_registration.approved? && @kkp_registration.official_memo.present? %>
+    <%= nosubmit_bootstrap_form_with(model: @kkp_registration) do |f| %>
+        <%= f.file_preview :official_memo %>
+    <% end %>
+  <% end %>
+</div>

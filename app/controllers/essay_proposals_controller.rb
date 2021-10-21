@@ -10,6 +10,10 @@ class EssayProposalsController < ApplicationController
     @essay_proposal = EssayProposal.find(params[:id]).decorate
   end
 
+  def edit
+    head :method_not_allowed
+  end
+
   def approval
     @essay_proposal = @essay_proposal.decorate
   end

@@ -4,7 +4,7 @@ module AdministratorMenuPresenter
   end
 
   def self.cache_key
-    "v7/menus/administrator"
+    "v8/menus/administrator"
   end
 
   def self.menus
@@ -15,7 +15,7 @@ module AdministratorMenuPresenter
         id: "menu-peserta-kkp",
         title: "Data Peserta KKP",
         items: [
-          {href: "#", text: "Berkas Peserta KKP"},
+          {href: kkp_registrations_path, text: "Berkas Peserta SKRIPSI"},
           {href: "#status_nota_dinas_kkp", text: "Nilai Peserta KKP"}
         ]
       },

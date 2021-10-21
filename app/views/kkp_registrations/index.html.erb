@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container bg-white p-3">
+  <%= render(FlashComponent.new) %>
+  <h2 class="text-center">Berkas Peserta KKP</h2>
+
+  <table id="essays" class="w-100">
+    <thead>
+      <th>No</th>
+      <th>Nama Lengkap</th>
+      <th>Judul Proposal</th>
+      <th>Action</th>
+      <th>Status</th>
+    </thead>
+    <tbody>
+      <% @kkp_registrations.each_with_index do |kkp_registration, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= kkp_registration.user.name %></td>
+          <td><%= kkp_registration.entity_name %></td>
+          <td>
+            <%= link_to "Cek", kkp_registration, class: "btn btn-primary" %>
+            <%= link_to "Hapus", kkp_registration_path(kkp_registration),
+              class: "btn btn-danger",
+              method: :delete,
+              "data-confirm": "Hapus data ?" %>
+          </td>
+          <td><%= kkp_registration.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

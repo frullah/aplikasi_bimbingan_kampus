@@ -2,7 +2,7 @@
 <%= render "registration_status" %>
 
 <%= render "user_form" %>
-<%= bootstrap_form_with(url: {action: :create}, model: @essay_proposal) do |f| %>
+<%= bootstrap_form_with(model: @essay_proposal) do |f| %>
   <%= f.text_field :title %>
   <%= f.file_field_with_preview(:outline_file, accept: "application/pdf") %>
   <%= f.file_field_with_preview :form_file, accept: "application/pdf" %>

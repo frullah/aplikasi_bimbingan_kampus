@@ -1,0 +1,11 @@
+<%= render(SmallContainerComponent.new) do %>
+  <%= render(FlashComponent.new) %>
+
+  <% if current_user.kkp_registration.nil? %>
+    <%= render "unregistered" %>
+  <% elsif current_user.kkp_registration.status.to_sym == :approved %>
+    <%= render "approved" %>
+  <% else %>
+    <%= render "registered" %>
+  <% end %>
+<% end %>
