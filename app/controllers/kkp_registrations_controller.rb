@@ -87,12 +87,14 @@ class KkpRegistrationsController < ApplicationController
 
   private def kkp_registration_params
     @kkp_registration_params ||= params.require(:kkp_registration).permit(
-      :entity_name,
       :khs_semester_6,
       :krs_semester_7,
       :registration_form_file,
       :payment_proof_file,
-      :academic_transcript_file
+      :academic_transcript_file,
+      :entity_name,
+      :individual,
+      :entity_type,
     )
   end
 end

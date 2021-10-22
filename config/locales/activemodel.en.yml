@@ -16,6 +16,9 @@ en:
         payment_proof_file: Berkas bukti pembayaran
         academic_transcript_file: Berkas transkrip nilai
         revision_message: Keterangan
+        individual: Jenis Kelompok
+        members: "Anggota Kelompok (KKP Kelompok)"
+        entity_type: Organisasi/Objek yang diteliti (KKP Kelompok)
 
   attributes:
     id_number: NIM

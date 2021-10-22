@@ -13,16 +13,16 @@ module DosenMenuPresenter
       {href: "/", text: "Beranda"},
       {
         id: "menu-kkp",
-        title: "Pendaftaran KKP",
+        title: "Peserta KKP",
         items: [
-          {href: "#", text: "Daftar KKP"},
+          {href: "#", text: "Bimbingan KKP"},
           {href: "#status_nota_dinas_kkp", text: "Status Nota Dinas KKP"},
           {href: "#bimbingan_kkp&nim=#{@current_user&.id_number}", text: "Bimbingan KKP"}
         ]
       },
       {
         id: "menu-skripsi",
-        title: "Pendaftaran Skripsi",
+        title: "Peserta Skripsi",
         items: [
           {href: "#daftar_skripsi", text: "Daftar SKRIPSI"},
           {href: "#status_nota_dinas_skripsi", text: "Status Nota Dinas SKRIPSI"}

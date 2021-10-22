@@ -21,4 +21,19 @@ class KkpRegistration < ApplicationRecord
   validates :academic_transcript_file, presence: true
 
   enum status: [:pending, :rejected, :approved]
+  enum entity_type: [:upper, :middle_lower]
+
+  def self.individual_options
+    [
+      ["KKP Individu", true],
+      ["KKP Kelompok", false]
+    ]
+  end
+
+  def self.entity_type_options
+    [
+      ["Usaha Makro Kelas Atas", :upper],
+      ["Usaha Makro Menengah ke bawah", :middle_lower]
+    ]
+  end
 end

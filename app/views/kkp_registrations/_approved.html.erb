@@ -1,11 +1,3 @@
 <h2 class="text-center">Data Pendaftaran KKP</h2>
-<%= render "registration_status" %>
-<%= render "user_form" %>
-<%= bootstrap_form_with(model: @kkp_registration, html: { onsubmit: "return false" }) do |f| %>
-  <%= f.text_field :entity_name, readonly: true %>
-  <%= f.file_preview :registration_form_file %>
-  <%= f.file_preview :khs_semester_6 %>
-  <%= f.file_preview :krs_semester_7 %>
-  <%= f.file_preview :payment_proof_file %>
-  <%= f.file_preview :academic_transcript_file %>
-<% end %>
+
+<%= render "fields" %>

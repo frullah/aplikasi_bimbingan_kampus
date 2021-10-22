@@ -1,6 +1,6 @@
 
 <h2 class="text-center">Mendaftar Skripsi</h2>
-<%= render "user_form" %>
+<%= render "shared/user_form" %>
 <%= bootstrap_form_with(url: {action: :create}, model: @essay_proposal) do |f| %>
   <%= f.text_field :title, required: true %>
   <%= f.file_field :outline_file, required: true, accept: "application/pdf" %>

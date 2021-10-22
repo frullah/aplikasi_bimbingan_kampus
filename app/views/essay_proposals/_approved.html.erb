@@ -1,7 +1,7 @@
 <h2 class="text-center">Data Pendaftaran Skripsi</h2>
 <%= render "registration_status" %>
 
-<%= render "user_form" %>
+<%= render "shared/user_form" %>
 <%= bootstrap_form_with(model: @essay_proposal, html: { onsubmit: "return false" }) do |f| %>
   <%= f.text_field :title, readonly: true %>
   <%= f.file_preview(:outline_file) %>
