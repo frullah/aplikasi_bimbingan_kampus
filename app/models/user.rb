@@ -17,11 +17,15 @@ class User < ApplicationRecord
     :mahasiswa
   ]
 
+  scope :administrator, -> { where(user_type: :administrator) }
+  scope :dosen, -> { where(user_type: :dosen) }
+  scope :mahasiswa, -> { where(user_type: :mahasiswa) }
+
   def menu_presenter
-    case user_type.to_s
-    when "administrator"
+    case user_type.to_sym
+    when :administrator
       AdministratorMenuPresenter
-    when "dosen"
+    when :dosen
       DosenMenuPresenter
     else
       MahasiswaMenuPresenter
@@ -30,5 +34,9 @@ class User < ApplicationRecord
 
   def password_required?
     !persisted?
+  end
+
+  def user_type_setter
+    :mahasiswa
   end
 end
