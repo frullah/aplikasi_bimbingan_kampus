@@ -11,8 +11,6 @@
   <%= f.file_field_with_preview :academic_transcript_file, accept: "application/pdf" %>
   <%= f.select :kkp_type, KkpRegistration.kkp_type_options %>
   <%= f.text_field :members %>
-  <%= f.select :entity_type,
-    KkpRegistration.entity_type_options,
-    {} %>
+  <%= f.select :entity_type, KkpRegistration.entity_type_options %>
   <%= f.primary "Perbarui", render_as_button: true, extra_class: "w-100" %>
 <% end %>
