@@ -11,4 +11,8 @@ class KkpRegistrationDecorator < Draper::Decorator
   #       object.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
+
+  def kkp_types
+    KkpRegistration.kkp_types
+  end
 end

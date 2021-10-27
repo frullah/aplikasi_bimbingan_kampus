@@ -9,9 +9,7 @@
   <%= f.file_field_with_preview :registration_form_file, accept: "application/pdf" %>
   <%= f.file_field_with_preview :payment_proof_file, accept: "application/pdf,image/png,image/jpeg" %>
   <%= f.file_field_with_preview :academic_transcript_file, accept: "application/pdf" %>
-  <%= f.select :individual,
-    KkpRegistration.individual_options,
-    {} %>
+  <%= f.select :kkp_type, KkpRegistration.kkp_type_options %>
   <%= f.text_field :members %>
   <%= f.select :entity_type,
     KkpRegistration.entity_type_options,

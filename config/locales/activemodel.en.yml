@@ -19,6 +19,11 @@ en:
         individual: Jenis Kelompok
         members: "Anggota Kelompok (KKP Kelompok)"
         entity_type: Organisasi/Objek yang diteliti (KKP Kelompok)
+        kkp_type: Jenis KKP
+        # not working
+        # kkp_type_individual: KKP Individu
+        # kkp_types:
+        #   individual: KKP Individu
 
   attributes:
     id_number: NIM

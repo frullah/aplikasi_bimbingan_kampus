@@ -10,7 +10,7 @@
   <%= f.file_preview :academic_transcript_file %>
   <%= f.text_field :entity_name, readonly: true %>
   <%= f.select :individual,
-    KkpRegistration.individual_options,
+    KkpRegistration.kkp_type_options,
     {}, disabled: true %>
   <%= f.text_field :members, readonly: true %>
   <%= f.select :entity_type,

@@ -50,8 +50,8 @@ class KkpRegistrationsController < ApplicationController
     @kkp_registration = if current_user.kkp_registration.nil?
       KkpRegistration.new
     else
-      current_user.kkp_registration.decorate
-    end
+      current_user.kkp_registration
+    end.decorate
   end
 
   def edit
@@ -93,7 +93,7 @@ class KkpRegistrationsController < ApplicationController
       :payment_proof_file,
       :academic_transcript_file,
       :entity_name,
-      :individual,
+      :kkp_type,
       :entity_type,
     )
   end
