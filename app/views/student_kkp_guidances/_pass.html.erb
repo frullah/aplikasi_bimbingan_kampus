@@ -3,27 +3,22 @@
     <%= render(FlashComponent.new) %>
     <%= link_to "< Kembali", kkp_guidances_path, "data-turbo-frame": "_top", class: "btn btn-link fw-medium" %>
 
-    <h2 class="text-center">Cek Bimbingan KKP</h2>
+    <h2 class="text-center">Data Bimbingan KKP</h2>
 
     <%= render "revision_message" %>
-    <%= render "fields" %>
+
+    <%= render "shared/user_form" %>
+
+    <%= nosubmit_bootstrap_form_with(model: @kkp_guidance) do |f| %>
+      <%= f.file_preview :report_file %>
+      <%= f.file_preview :score_file %>
+    <% end %>
+
     <%= nosubmit_bootstrap_form_with(model: @kkp_guidance) do |f|%>
       <%= f.telephone_field :supervisor_score_total, readonly: true %>
       <%= f.telephone_field :field_counselor_score_total, readonly: true %>
       <%= f.telephone_field :total_score, readonly: true %>
       <%= f.text_field :grade, readonly: true %>
     <% end %>
-
-    <div class="grid" style="--bs-columns: 1; --bs-gap: 1rem">
-      <%= link_to "Revisi",
-        kkp_guidance_rejection_path(@kkp_guidance),
-        "data-turbo-frame": "_top",
-        class: "btn btn-primary" %>
-        <%# TODO: %>
-      <%= link_to "Luluskan",
-        kkp_guidance_approval_path(@kkp_guidance),
-        "data-turbo-frame": "_top",
-        class: "btn btn-primary" %>
-    </div>
   <% end %>
 <% end %>

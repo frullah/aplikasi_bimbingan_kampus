@@ -16,11 +16,20 @@ class KkpGuidancesController < ApplicationController
   end
 
   def approve
-    param = params.require(:kkp_guidance).permit(:official_memo)
-    if @kkp_guidance.update(status: :approved, **param)
-      redirect_to @kkp_guidance, info: "kkp disetujui"
+    param = params.require(:kkp_guidance).permit(
+      :presentation_score,
+      :material_score,
+      :material_mastery_score,
+      :language_score,
+      :writing_style_score,
+      :innovation_score,
+      :teamwork_score,
+      :discipline_score,
+    )
+    if @kkp_guidance.update(pass: true, **param)
+      redirect_to @kkp_guidance, info: "KKP diluluskan"
     else
-      redirect_to @kkp_guidance, info: "Proses penerimaan kkp gagal"
+      redirect_to @kkp_guidance, info: "Proses pelulusan kkp gagal"
     end
   end
 
@@ -30,36 +39,15 @@ class KkpGuidancesController < ApplicationController
 
   def reject
     param = params.require(:kkp_guidance).permit(:revision_message)
-    if @kkp_guidance.update(status: :rejected, **param)
-      redirect_to @kkp_guidance, info: "kkp ditolak"
+    if @kkp_guidance.update(pass: false, **param)
+      redirect_to @kkp_guidance, info: "Revisi berhasil dikirim"
     else
       redirect_to @kkp_guidance, danger: "Proses penolakan kkp gagal"
     end
   end
 
-  # TODO: refactor it to kkp_guidance as resource for creation and show status
-  # TODO: move new to edit when current_user has kkp_guidance
-  def new
-    @kkp_guidance = if current_user.kkp_guidance.nil?
-      KkpGuidance.new
-    else
-      current_user.kkp_guidance
-    end.decorate
-  end
-
   def edit
     head :method_not_allowed
-  end
-
-  # create new essay proposal data
-  def create
-    @kkp_guidance = current_user.build_kkp_guidance(kkp_guidance_params)
-
-    if @kkp_guidance.save
-      redirect_to({action: :new}, success: "Bimbingan KKP berhasil")
-    else
-      redirect_to({action: :new}, success: "Bimbingan KKP gagal")
-    end
   end
 
   def update
@@ -87,7 +75,7 @@ class KkpGuidancesController < ApplicationController
       :academic_transcript_file,
       :entity_name,
       :kkp_type,
-      :entity_type,
+      :entity_type
     )
   end
 end

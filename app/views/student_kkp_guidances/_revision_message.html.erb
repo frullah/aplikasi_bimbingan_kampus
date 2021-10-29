@@ -1,0 +1,8 @@
+<% if !@kkp_guidance.model.pass && @kkp_guidance.revision_message.present? %>
+  <div aria-label="keterangan">
+    Pesan Revisi
+    <div class="border p-2" style="min-height: 180px; ">
+      <%= @kkp_guidance.revision_message %>
+    </div>
+  </div>
+<% end %>

@@ -3,9 +3,9 @@ module AdministratorMenuPresenter
     include Rails.application.routes.url_helpers
   end
 
-  def self.cache_key
-    "v8/menus/administrator"
-  end
+  # def self.cache_key
+  #   "v8/menus/administrator"
+  # end
 
   def self.menus
     [

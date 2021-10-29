@@ -20,6 +20,26 @@ en:
         members: "Anggota Kelompok (KKP Kelompok)"
         entity_type: Organisasi/Objek yang diteliti (KKP Kelompok)
         kkp_type: Jenis KKP
+      kkp_guidance:
+        report_file: Laporan KKP
+        score_file: Nilai dari pembimbing lapangan
+
+        revision_message: Pesan Revisi
+        presentation_score: Nilai Presentasi
+        material_score: Nilai Materi
+        material_mastery_score: Nilai Penguasaan Materi
+        language_score: Nilai Bahasa
+        writing_style_score: Nilai Tata Penulisan
+
+        innovation_score: Nilai Inovasi
+        teamwork_score: Nilai Kerjasama
+        discipline_score: Nilai kedisiplinan
+
+        supervisor_score_total: Nilai rata-rata dosen pembimbing 
+        field_counselor_score_total: Nilai rata-rata pembimbing lapangan
+        total_score: Total Nilai
+        grade: Peringkat
+        
         # not working
         # kkp_type_individual: KKP Individu
         # kkp_types:

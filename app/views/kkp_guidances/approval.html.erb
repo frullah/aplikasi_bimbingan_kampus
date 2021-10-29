@@ -1,12 +1,29 @@
 <%= render(SmallContainerComponent.new) do %>
   <%= render(FlashComponent.new) %>
-  <h2 class="text-center">Penyetujuan Bimbingan KKP</h2>
+  <h2 class="text-center">Pemberian Nilai Bimbingan KKP</h2>
   <%= render "fields" %>
 
   <hr>
 
   <%= bootstrap_form_with(model: @kkp_guidance, url: {action: :approve}) do |f| %>
-    <%= f.file_field :official_memo, required: true, accept: "application/pdf"  %>
-    <%= f.primary "Setujui dan kirim nota dinas kkp", render_as_button: true, extra_class: "w-100"%>
+    <h3>Nilai Dosen Pembimbing</h3>
+    <%= f.telephone_field :presentation_score, required: true, pattern: "(100|[0-9]{1,2})" %>
+    <%= f.telephone_field :material_score, required: true, pattern: "(100|[0-9]{1,2})" %>
+    <%= f.telephone_field :material_mastery_score, required: true, pattern: "(100|[0-9]{1,2})" %>
+    <%= f.telephone_field :language_score, required: true, pattern: "(100|[0-9]{1,2})" %>
+    <%= f.telephone_field :writing_style_score, required: true, pattern: "(100|[0-9]{1,2})" %>
+    <%= f.telephone_field :supervisor_score_total, readonly: true %>
+
+    <hr>
+
+    <h3>Nilai Pembimbing Lapangan</h3>
+    <%= f.telephone_field :innovation_score, required: true, pattern: "(100|[0-9]{1,2})" %>
+    <%= f.telephone_field :teamwork_score, required: true, pattern: "(100|[0-9]{1,2})" %>
+    <%= f.telephone_field :discipline_score, required: true, pattern: "(100|[0-9]{1,2})" %>
+    <%= f.telephone_field :field_counselor_score_total, readonly: true %>
+
+    <%= f.telephone_field :total_score, readonly: true %>
+    <%= f.text_field :grade, readonly: true %>
+    <%= f.primary "Tetapkan nilai dan luluskan", render_as_button: true, extra_class: "w-100"%>
   <% end %>
 <% end %>

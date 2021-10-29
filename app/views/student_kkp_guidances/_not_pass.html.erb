@@ -1,0 +1,14 @@
+<%= turbo_frame_tag dom_id(@kkp_guidance) do %>
+  <%= render(SmallContainerComponent.new) do %>
+    <%= render(FlashComponent.new) %>
+    <%= link_to "< Kembali", kkp_guidances_path, "data-turbo-frame": "_top", class: "btn btn-link fw-medium" %>
+    <h2 class="text-center">Data Bimbingan KKP</h2>
+    <%= render "revision_message" %>
+    <%= render "shared/user_form" %>
+    <%= bootstrap_form_with(model: @kkp_guidance, url: { action: :update}) do |f| %>
+      <%= f.file_field_with_preview :report_file, accept: "application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf" %>
+      <%= f.file_field_with_preview :score_file, accept: "application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf" %>
+      <%= f.primary "Kirim pembaruan", extra_class: "w-100" %>
+    <% end %>
+  <% end %>
+<% end %>

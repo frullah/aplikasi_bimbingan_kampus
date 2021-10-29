@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :rememberable, :validatable
 
+  delegate :kkp_guidance, to: :kkp_registration
+  
   validates :username, uniqueness: true, presence: true
   validates :id_number, uniqueness: {scope: :user_type}, allow_nil: true
   validates :name, presence: true, length: {maximum: 128}

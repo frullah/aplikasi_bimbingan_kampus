@@ -14,6 +14,8 @@ class CustomBootstrapFormBuilder < BootstrapForm::FormBuilder
   private def file_preview_link(attachment)
     if attachment.attached?
       @template.render(FileFieldPreviewButtonComponent.new(attachment: attachment))
+    else
+      @template.content_tag :div, "Belum ada file yang tersedia", class: "fw-bold"
     end
   end
 end

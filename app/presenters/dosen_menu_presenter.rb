@@ -3,9 +3,9 @@ module DosenMenuPresenter
     include Rails.application.routes.url_helpers
   end
 
-  def self.cache_key
-    "v2/menus/dosen"
-  end
+  # def self.cache_key
+  #   "v2/menus/dosen"
+  # end
 
   def self.menus
     [

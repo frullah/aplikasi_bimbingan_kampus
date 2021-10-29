@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :kkp_guidances
+  resource :student_kkp_guidances, only: [:edit, :update]
+
+  resources :kkp_guidances do
+    get :approval
+    patch :approve
+
+    get :rejection
+    patch :reject
+  end
+
   resource :about, only: [:show]
 
   resources :essay_proposals do
