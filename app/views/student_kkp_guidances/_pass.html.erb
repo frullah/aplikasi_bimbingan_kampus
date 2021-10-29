@@ -1,9 +1,7 @@
 <%= turbo_frame_tag dom_id(@kkp_guidance) do %>
   <%= render(SmallContainerComponent.new) do %>
     <%= render(FlashComponent.new) %>
-    <%= link_to "< Kembali", kkp_guidances_path, "data-turbo-frame": "_top", class: "btn btn-link fw-medium" %>
-
-    <h2 class="text-center">Data Bimbingan KKP</h2>
+    <h2 class="text-center">Hasil Bimbingan KKP</h2>
 
     <%= render "revision_message" %>
 
