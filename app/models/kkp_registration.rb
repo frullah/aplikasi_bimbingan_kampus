@@ -1,7 +1,9 @@
 class KkpRegistration < ApplicationRecord
   include RevisableRegistration
 
-  belongs_to :user
+  belongs_to :user, -> { where(user_type: :mahasiswa) }
+
+  has_one :kkp_guidance, -> { unscope(:where) }
 
   has_one_attached :registration_form_file
   has_one_attached :khs_semester_6
@@ -19,6 +21,8 @@ class KkpRegistration < ApplicationRecord
 
   enum entity_type: [:upper, :middle_lower]
   enum kkp_type: [:individual, :group], _prefix: true
+
+  after_save :sync_with_kkp_guidance
 
   def kkp_type=(value)
     write_attribute(:individual, value == :individual)
@@ -52,5 +56,11 @@ class KkpRegistration < ApplicationRecord
       ["Usaha Makro Kelas Atas", :upper],
       ["Usaha Makro Menengah ke bawah", :middle_lower]
     ]
+  end
+
+  private def sync_with_kkp_guidance
+    if approved? && kkp_guidance.nil?
+      build_kkp_guidance.save!
+    end
   end
 end

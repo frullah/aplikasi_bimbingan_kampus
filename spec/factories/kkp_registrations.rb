@@ -1,10 +1,11 @@
 FactoryBot.define do
   factory :kkp_registration do
+    user
+
     entity_name { "MyString" }
-    status { :pending }
-    individual { true }
+    kkp_type { :individual }
     members { "Member1" }
-    entity_type { [:upper, :middle_to_lower].sample }
+    entity_type { [:upper, :middle_lower].sample }
     registration_form_file { Rack::Test::UploadedFile.new("spec/fixtures/dummy.pdf", "application/pdf") }
     khs_semester_6 { Rack::Test::UploadedFile.new("spec/fixtures/dummy.pdf", "application/pdf") }
     krs_semester_7 { Rack::Test::UploadedFile.new("spec/fixtures/dummy.pdf", "application/pdf") }

@@ -1,0 +1,12 @@
+<%= render(SmallContainerComponent.new) do %>
+  <%= render(FlashComponent.new) %>
+  <h2 class="text-center">Penyetujuan Bimbingan KKP</h2>
+  <%= render "fields" %>
+
+  <hr>
+
+  <%= bootstrap_form_with(model: @kkp_guidance, url: {action: :approve}) do |f| %>
+    <%= f.file_field :official_memo, required: true, accept: "application/pdf"  %>
+    <%= f.primary "Setujui dan kirim nota dinas kkp", render_as_button: true, extra_class: "w-100"%>
+  <% end %>
+<% end %>

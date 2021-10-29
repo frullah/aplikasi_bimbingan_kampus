@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_25_105103) do
+ActiveRecord::Schema.define(version: 2021_10_29_155318) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -71,6 +71,22 @@ ActiveRecord::Schema.define(version: 2021_10_25_105103) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "kkp_guidances", force: :cascade do |t|
+    t.integer "kkp_registration_id", null: false
+    t.integer "presentation_score"
+    t.integer "material_score"
+    t.integer "material_mastery_score"
+    t.integer "language_score"
+    t.integer "writing_style_score"
+    t.integer "innovation_score"
+    t.integer "teamwork_score"
+    t.integer "discipline_score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "pass", default: false
+    t.index ["kkp_registration_id"], name: "index_kkp_guidances_on_kkp_registration_id"
+  end
+
   create_table "kkp_registrations", force: :cascade do |t|
     t.string "entity_name"
     t.boolean "individual"
@@ -110,5 +126,6 @@ ActiveRecord::Schema.define(version: 2021_10_25_105103) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "essay_proposals", "users"
+  add_foreign_key "kkp_guidances", "kkp_registrations"
   add_foreign_key "kkp_registrations", "users"
 end

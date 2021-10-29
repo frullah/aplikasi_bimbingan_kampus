@@ -4,7 +4,7 @@ module DosenMenuPresenter
   end
 
   def self.cache_key
-    "v1/menus/dosen"
+    "v2/menus/dosen"
   end
 
   def self.menus
@@ -15,7 +15,7 @@ module DosenMenuPresenter
         id: "menu-kkp",
         title: "Peserta KKP",
         items: [
-          {href: "#", text: "Bimbingan KKP"},
+          {href: kkp_guidances_path, text: "Bimbingan KKP"},
           {href: "#status_nota_dinas_kkp", text: "Status Nota Dinas KKP"},
           {href: "#bimbingan_kkp&nim=#{@current_user&.id_number}", text: "Bimbingan KKP"}
         ]

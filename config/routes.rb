@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :kkp_guidances
   resource :about, only: [:show]
 
   resources :essay_proposals do

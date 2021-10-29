@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :rememberable, :validatable
 
   validates :username, uniqueness: true, presence: true
-  validates :id_number, uniqueness: {scope: :user_type}
+  validates :id_number, uniqueness: {scope: :user_type}, allow_nil: true
   validates :name, presence: true, length: {maximum: 128}
   validates :phone_number, length: {maximum: 16}
 
