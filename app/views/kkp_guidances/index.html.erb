@@ -20,10 +20,6 @@
           <td><%= kkp_guidance.kkp_registration.entity_name %></td>
           <td>
             <%= link_to "Cek", kkp_guidance, class: "btn btn-primary" %>
-            <%= link_to "Hapus", kkp_guidance_path(kkp_guidance),
-              class: "btn btn-danger",
-              method: :delete,
-              "data-confirm": "Hapus data ?" %>
           </td>
           <td><%= kkp_guidance.pass %></td>
         </tr>

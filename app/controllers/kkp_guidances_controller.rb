@@ -37,13 +37,6 @@ class KkpGuidancesController < ApplicationController
     end
   end
 
-  def destroy
-    @kkp_guidance = KkpGuidance.find(params[:id])
-    if @kkp_guidance.kkp_registration.update(status: :rejected)
-      redirect_to({action: :index}, info: "Data Bimbingan KKP dihapus")
-    end
-  end
-
   # TODO: refactor it to kkp_guidance as resource for creation and show status
   # TODO: move new to edit when current_user has kkp_guidance
   def new
