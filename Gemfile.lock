@@ -412,6 +412,7 @@ DEPENDENCIES
   devise!
   draper (~> 4.0)
   factory_bot_rails
+  ffi
   guard-livereload
   guard-rspec
   image_processing (~> 1.2)
