@@ -1,5 +1,6 @@
 class KkpGuidancesController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorize_dosen!
   before_action :set_kkp_guidance_member_action,
     only: [:approval, :approve, :rejection, :reject]
 

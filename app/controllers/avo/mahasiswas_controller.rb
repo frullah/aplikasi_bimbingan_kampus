@@ -1,7 +1,6 @@
 class Avo::MahasiswasController < Avo::ResourcesController
-  before_action :authenticate_user!
+  include Authorizable
 
-  def create
-    super
-  end
+  before_action :authenticate_user!
+  before_action :authorize_administrator!
 end

@@ -3,6 +3,8 @@ class Dosen < User
 
   default_scope { where(user_type: USER_TYPE) }
 
+  validates :id_number, presence: true
+
   after_initialize :set_user_type
   before_save :set_user_type
 

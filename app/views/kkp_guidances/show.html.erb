@@ -7,12 +7,7 @@
 
     <%= render "revision_message" %>
     <%= render "fields" %>
-    <%= nosubmit_bootstrap_form_with(model: @kkp_guidance) do |f|%>
-      <%= f.telephone_field :supervisor_score_total, readonly: true %>
-      <%= f.telephone_field :field_counselor_score_total, readonly: true %>
-      <%= f.telephone_field :total_score, readonly: true %>
-      <%= f.text_field :grade, readonly: true %>
-    <% end %>
+    <%= render "score_fields" %>
 
     <div class="grid" style="--bs-columns: 1; --bs-gap: 1rem">
       <%= link_to "Revisi",

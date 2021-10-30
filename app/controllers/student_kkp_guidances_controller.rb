@@ -1,5 +1,12 @@
 class StudentKkpGuidancesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :authorize_mahasiswa!
+
   def edit
+    if current_user.kkp_registration.nil?
+      return redirect_to new_kkp_registration_path
+    end
+
     @kkp_guidance = current_user.kkp_guidance.decorate
   end
 

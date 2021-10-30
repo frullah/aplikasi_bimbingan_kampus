@@ -1,0 +1,8 @@
+<% if @kkp_guidance.model.pass %>
+  <%= nosubmit_bootstrap_form_with(model: @kkp_guidance) do |f|%>
+    <%= f.telephone_field :supervisor_score_total, readonly: true %>
+    <%= f.telephone_field :field_counselor_score_total, readonly: true %>
+    <%= f.telephone_field :total_score, readonly: true %>
+    <%= f.text_field :grade, readonly: true %>
+  <% end %>
+<% end %>

@@ -6,8 +6,8 @@ class MahasiswaResource < Avo::BaseResource
   # end
 
   field :id, as: :id
-  include AvoUserResourceFields
   field :id_number, as: :text, name: "NIM", placeholder: "NIM", required: true, maxlength: 16
+  include AvoUserResourceFields
 
   def plural_name
     "Mahasiswa"

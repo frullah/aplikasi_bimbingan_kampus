@@ -4,11 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :rememberable, :validatable
 
   delegate :kkp_guidance, to: :kkp_registration
-  
+
   validates :username, uniqueness: true, presence: true
   validates :id_number, uniqueness: {scope: :user_type}, allow_nil: true
   validates :name, presence: true, length: {maximum: 128}
   validates :phone_number, length: {maximum: 16}
+  validates :email, uniqueness: true
 
   has_one :essay_proposal
   has_one :kkp_registration
@@ -40,5 +41,9 @@ class User < ApplicationRecord
 
   def user_type_setter
     :mahasiswa
+  end
+
+  def email_required?
+    false
   end
 end

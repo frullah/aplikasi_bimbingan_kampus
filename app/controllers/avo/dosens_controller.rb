@@ -1,7 +1,10 @@
 class Avo::DosensController < Avo::ResourcesController
-  before_action :authenticate_user!
+  include Authorizable
 
-  def custom_tool
-    @page_title = "aa"
-  end
+  before_action :authenticate_user!
+  before_action :authorize_administrator!
+
+  # def custom_tool
+  #   @page_title = "aa"
+  # end
 end

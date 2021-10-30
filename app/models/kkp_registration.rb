@@ -3,7 +3,7 @@ class KkpRegistration < ApplicationRecord
 
   belongs_to :user, -> { where(user_type: :mahasiswa) }
 
-  has_one :kkp_guidance, -> { unscope(:where) }
+  has_one :kkp_guidance
 
   has_one_attached :registration_form_file
   has_one_attached :khs_semester_6
@@ -59,6 +59,7 @@ class KkpRegistration < ApplicationRecord
   end
 
   private def sync_with_kkp_guidance
+    binding.pry
     if approved? && kkp_guidance.nil?
       build_kkp_guidance.save!
     end

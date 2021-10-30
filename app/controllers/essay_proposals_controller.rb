@@ -1,5 +1,6 @@
 class EssayProposalsController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorize_mahasiswa!
   before_action :set_essay_proposal, only: [:approval, :approve, :rejection, :reject]
 
   def index

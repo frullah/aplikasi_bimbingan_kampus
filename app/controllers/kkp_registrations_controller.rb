@@ -1,5 +1,7 @@
 class KkpRegistrationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorize_mahasiswa!, only: [:new, :create, :edit, :update]
+  before_action :authorize_administrator!, except: [:new, :create, :edit, :update]
   before_action :set_kkp_registration_member_action,
     only: [:approval, :approve, :rejection, :reject]
 
@@ -94,6 +96,7 @@ class KkpRegistrationsController < ApplicationController
       :academic_transcript_file,
       :entity_name,
       :kkp_type,
+      :members,
       :entity_type,
     )
   end

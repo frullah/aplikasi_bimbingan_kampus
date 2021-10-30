@@ -99,3 +99,5 @@ gem 'avo', '~> 1.13'
 gem 'activestorage-validator', '~> 0.1.4'
 
 gem "draper", "~> 4.0"
+
+gem "rails-i18n", "~> 6.0"

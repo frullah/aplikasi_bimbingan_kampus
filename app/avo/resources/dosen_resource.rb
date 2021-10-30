@@ -7,8 +7,8 @@ class DosenResource < Avo::BaseResource
 
   field :id, as: :id
 
-  include AvoUserResourceFields
   field :id_number, as: :text, name: "NIDN", placeholder: "NIDN", required: true, maxlength: 16
+  include AvoUserResourceFields
 
   def plural_name
     "Dosen"
