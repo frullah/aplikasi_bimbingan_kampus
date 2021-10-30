@@ -6,7 +6,7 @@ class AdministratorResource < Avo::BaseResource
   # end
 
   field :id, as: :id
-  include UserResourceFields
+  include AvoUserResourceFields
 
   def plural_name
     "Administrator"
