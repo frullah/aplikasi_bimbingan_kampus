@@ -3,10 +3,9 @@
 ## Requirements
 
 - Ruby 3.0.1
-- NodeJS >= 16.12.0
+- NodeJS >= 16.13.0
 - yarn package manager 
-- jika anda ingin menggunakan database SQLite, anda membutuhkan library [SQLite](https://www.sqlite.org) 
-- jika anda ingin menggunakan database PostgreSQL, anda membutuhkan library [Ruby MySQL2]
+- salah satu database server, diantaranya [MariaDB/MySQL](https://mariadb.org/download/), [PostgreSQL](https://www.postgresql.org/), atau [SQLite](https://www.sqlite.org/)
 
 ## Cara mennginstall Yarn package manager
 
