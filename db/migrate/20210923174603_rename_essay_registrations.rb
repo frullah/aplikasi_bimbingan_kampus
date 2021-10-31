@@ -1,4 +1,4 @@
-class RenameEssayProposals < ActiveRecord::Migration[7.0]
+class RenameEssayRegistrations < ActiveRecord::Migration[7.0]
   def change
     rename_table :essay_registrations, :essay_proposals
 
