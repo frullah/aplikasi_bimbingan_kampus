@@ -59,6 +59,10 @@ RAILS_ENV=production bin/rails db:create db:setup db:migrate db:seed
 git push heroku main:master
 ```
 
+## Contoh Aplikasi yang di-deploy di Heroku
+
+aplikasi-bimbingan-kampus.herokuapp.com
+
 ## Pertanyaan
 
 ask question to [iyashiro47@gmail.com](mailto:iyashiro47@gmail.com)
