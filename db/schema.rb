@@ -12,9 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_10_31_022052) do
 
-  create_table "action_text_rich_texts", force: :cascade do |t|
+  create_table "action_text_rich_texts", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
-    t.text "body"
+    t.text "body", size: :long
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -22,17 +22,17 @@ ActiveRecord::Schema.define(version: 2021_10_31_022052) do
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
   end
 
-  create_table "active_storage_attachments", force: :cascade do |t|
+  create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", force: :cascade do |t|
+  create_table "active_storage_blobs", charset: "utf8mb4", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -44,19 +44,14 @@ ActiveRecord::Schema.define(version: 2021_10_31_022052) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "active_storage_variant_records", force: :cascade do |t|
-    t.integer "blob_id", null: false
+  create_table "active_storage_variant_records", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "administrators", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "essay_proposals", force: :cascade do |t|
-    t.integer "user_id", null: false
+  create_table "essay_proposals", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.string "email"
     t.string "phone_number"
     t.string "title"
@@ -66,13 +61,8 @@ ActiveRecord::Schema.define(version: 2021_10_31_022052) do
     t.index ["user_id"], name: "index_essay_proposals_on_user_id"
   end
 
-  create_table "essays", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "kkp_guidances", force: :cascade do |t|
-    t.integer "kkp_registration_id", null: false
+  create_table "kkp_guidances", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "kkp_registration_id", null: false
     t.integer "presentation_score"
     t.integer "material_score"
     t.integer "material_mastery_score"
@@ -80,14 +70,14 @@ ActiveRecord::Schema.define(version: 2021_10_31_022052) do
     t.integer "writing_style_score"
     t.integer "innovation_score"
     t.integer "teamwork_score"
-    t.integer "discipline_score"
+    t.string "discipline_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "pass", default: false
     t.index ["kkp_registration_id"], name: "index_kkp_guidances_on_kkp_registration_id"
   end
 
-  create_table "kkp_registrations", force: :cascade do |t|
+  create_table "kkp_registrations", charset: "utf8mb4", force: :cascade do |t|
     t.string "entity_name"
     t.boolean "individual"
     t.integer "status", default: 0
@@ -95,24 +85,19 @@ ActiveRecord::Schema.define(version: 2021_10_31_022052) do
     t.string "members"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "kkp_type", default: 0, null: false
     t.index ["user_id"], name: "index_kkp_registrations_on_user_id"
   end
 
-  create_table "mahasiswas", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
