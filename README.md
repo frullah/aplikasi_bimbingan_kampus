@@ -16,6 +16,26 @@
 
 ## Cara menginstall project ini
 
+copy file `.env.example` ke `.env.production.local`,
+
+sesuaikan environment variable,
+
+beberapa environment variable yang wajib disesuaikan
+
+- `DATABASE_URL`: URL koneksi database.
+
+  - contoh `DATABASE_URL` PostgreSQL: postgres://`USER`:`PASSWORD`@`localhost`/`NAMA_DATABASE`
+
+  - contoh `DATABASE_URL` MySQL: mysql2://`USER`:`PASSWORD`@`localhost`/`NAMA_DATABASE`
+
+  - jika user tidak memiliki password, hapus `PASSWORD`.
+    
+    contoh untuk MySQL: mysql2://`USER`@`localhost`/`NAMA_DATABASE`
+
+    contoh untuk PostgreSQL: postgres://`USER`@`localhost`/`NAMA_DATABASE`
+
+   [Dokumentasi `DATABASE_URL` lebih lanjut](https://blog.arkency.com/database-url-examples-for-rails-db-connection-strings/)
+
 ```bash
 # menginstall database
 RAILS_ENV=production bin/rails db:migrate
