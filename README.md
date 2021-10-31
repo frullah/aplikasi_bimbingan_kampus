@@ -37,15 +37,17 @@ beberapa environment variable yang wajib disesuaikan
    [Dokumentasi `DATABASE_URL` lebih lanjut](https://blog.arkency.com/database-url-examples-for-rails-db-connection-strings/)
 
 ```bash
-# menginstall database
-RAILS_ENV=production bin/rails db:migrate
-
 # mengompile assets
 RAILS_ENV=production bin/rails assets:precompile
 
-# pembuatan data awal
-RAILS_ENV=production bin/rails db:seed
+# pemasangan database
+RAILS_ENV=production bin/rails db:create db:setup db:migrate db:seed
 ```
+
+## Akun Administrator Bawaan
+
+- username: admin
+- password: changeme123
 
 ## Sistem Operasi yang telah dites
 
