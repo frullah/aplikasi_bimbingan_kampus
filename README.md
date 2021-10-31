@@ -31,6 +31,12 @@ RAILS_ENV=production bin/rails db:seed
 
 - Arch Linux
 
+## Deployment ke Heroku
+
+```bash
+git push heroku main:master
+```
+
 ## Pertanyaan
 
 ask question to [iyashiro47@gmail.com](mailto:iyashiro47@gmail.com)
