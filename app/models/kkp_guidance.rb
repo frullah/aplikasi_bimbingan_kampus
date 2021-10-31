@@ -1,3 +1,4 @@
+# TODO: add more spec plz
 class KkpGuidance < ApplicationRecord
   belongs_to :kkp_registration
 

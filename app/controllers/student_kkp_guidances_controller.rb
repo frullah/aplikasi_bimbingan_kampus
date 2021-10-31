@@ -1,3 +1,4 @@
+# TODO: add spec plz
 class StudentKkpGuidancesController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_mahasiswa!

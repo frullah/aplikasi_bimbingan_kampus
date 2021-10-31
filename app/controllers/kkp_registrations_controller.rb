@@ -1,3 +1,4 @@
+# TODO: add spec plz
 class KkpRegistrationsController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_mahasiswa!, only: [:new, :create, :edit, :update]

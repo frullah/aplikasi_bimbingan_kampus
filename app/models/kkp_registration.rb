@@ -1,3 +1,4 @@
+# TODO: add more spec plz
 class KkpRegistration < ApplicationRecord
   include RevisableRegistration
 

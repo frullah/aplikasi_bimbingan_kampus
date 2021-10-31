@@ -1,6 +1,8 @@
+# TODO: add spec plz
 class EssayProposalsController < ApplicationController
   before_action :authenticate_user!
-  before_action :authorize_mahasiswa!
+  before_action :authorize_mahasiswa!, only: [:new, :create, :edit, :update]
+  before_action :authorize_administrator!, except: [:new, :create, :edit, :update]
   before_action :set_essay_proposal, only: [:approval, :approve, :rejection, :reject]
 
   def index

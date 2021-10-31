@@ -1,4 +1,5 @@
 # CRUD controller for Post model
+# TODO: add spec plz
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_administrator!, only: [:new, :create, :edit, :update]
