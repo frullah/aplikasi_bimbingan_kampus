@@ -1,6 +1,6 @@
 # Aplikasi Bimbingan Kampus
 
-## requirements
+## Requirements
 
 - Ruby 3.0.1
 - NodeJS >= 16.12.0
@@ -23,7 +23,7 @@ RAILS_ENV=production bin/rails db:migrate
 # mengompile assets
 RAILS_ENV=production bin/rails assets:precompile
 
-# pemembuatan data awal
+# pembuatan data awal
 RAILS_ENV=production bin/rails db:seed
 ```
 
