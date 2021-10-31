@@ -1,0 +1,14 @@
+<div class="mx-auto" style="max-width: 720px">
+  <% if current_user.administrator? %>
+    <%= render "delete_link", post: @post %>
+  <% end %>
+  <section class="bg-white p-4">
+    <div class="post-title mb-4">
+      <h2 class="text-center"><%= @post.title %></h2>
+      <small>
+        <%= @post.created_at.strftime("%d %B %Y %R") %>
+      </small>
+    </div>
+    <%= @post.content %>
+  </section>
+</div>

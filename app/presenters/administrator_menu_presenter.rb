@@ -3,6 +3,10 @@ module AdministratorMenuPresenter
     include Rails.application.routes.url_helpers
   end
 
+  def self.avo
+    Avo::Engine.routes.url_helpers
+  end
+
   # def self.cache_key
   #   "v8/menus/administrator"
   # end
@@ -27,9 +31,9 @@ module AdministratorMenuPresenter
           {href: "#status_nota_dinas_skripsi", text: "Nilai Peserta SKRIPSI"}
         ]
       },
-      {href: avo_path + "/resources/dosens", text: "Data Dosen Pembinmbing"},
-      {href: avo_path + "/resources/mahasiswas", text: "Data Mahasiswa"},
-      {href: avo_path + "/resources/administrators", text: "Data Administrator"},
+      {href: avo.new_resources_dosen_path, text: "Data Dosen Pembinmbing"},
+      {href: avo.new_resources_mahasiswa_path, text: "Data Mahasiswa"},
+      {href: avo.new_resources_administrator_path, text: "Data Administrator"},
       {href: about_path, text: "About"}
     ]
   end

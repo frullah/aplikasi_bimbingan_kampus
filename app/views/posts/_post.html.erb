@@ -1,0 +1,17 @@
+<div class="card" style="width: rem;">
+  <div class="card-body">
+    <h5 class="card-title fw-bold"><%= post.title %></h5>
+    <hr>
+    <p class="card-text">
+      <%= post.content.to_plain_text.truncate(48) %>
+    </p>
+    <hr>
+    <div class="grid" style="--bs-columns: 1; --bs-gap: 1rem">
+      <%= link_to "Lihat Selengkapnya", post, class: "btn btn-primary w-100" %>
+
+      <% if current_user.administrator? %>
+        <%= render "delete_link", post: post %>
+      <% end %>
+    </div>
+  </div>
+</div>

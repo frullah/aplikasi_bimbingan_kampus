@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   resource :student_kkp_guidances, only: [:edit, :update]
 
   resources :kkp_guidances do

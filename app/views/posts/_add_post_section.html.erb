@@ -1,0 +1,5 @@
+<% if current_user.administrator? %>
+  <div class="mb-4">
+    <%= bootstrap_link_to "Buat Postingan", avo.new_resources_post_path %>
+  </div>
+<% end %>

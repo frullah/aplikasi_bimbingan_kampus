@@ -16,4 +16,15 @@ module ApplicationHelper
     options[:url] = ""
     bootstrap_form_with(**options, &block)
   end
+
+  def bootstrap_link_to(*args, **options, &block)
+    link_to(
+      *args, 
+      {
+        **options,
+        class: "btn btn-primary"
+      }, 
+      &block
+    )
+  end
 end
