@@ -1,23 +1,36 @@
-# README
+# Aplikasi Bimbingan Kampus
 
 ## requirements
 
 - Ruby 3.0.1
 - NodeJS >= 16.12.0
-- yarn package manager
-- library SQLite [halaman](https://www.sqlite.org/download.html)
+- yarn package manager 
+- jika anda ingin menggunakan database SQLite, anda membutuhkan library [SQLite](https://www.sqlite.org) 
+- jika anda ingin menggunakan database PostgreSQL, anda membutuhkan library [Ruby MySQL2]
 
-## Installation
+## Cara mennginstall Yarn package manager
+
+1. pastikan NodeJS sudah terinstall
+2. jalankan perintah `npm install -g yarn` pada command line
+
+
+## Cara menginstall project ini
 
 ```bash
+# menginstall database
 RAILS_ENV=production bin/rails db:migrate
+
+# mengompile assets
 RAILS_ENV=production bin/rails assets:precompile
+
+# pemembuatan data awal
+RAILS_ENV=production bin/rails db:seed
 ```
 
-## Tested Operating System
+## Sistem Operasi yang telah dites
 
 - Arch Linux
 
-## Questions
+## Pertanyaan
 
 ask question to [iyashiro47@gmail.com](mailto:iyashiro47@gmail.com)

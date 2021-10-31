@@ -101,3 +101,7 @@ gem 'activestorage-validator', '~> 0.1.4'
 gem "draper", "~> 4.0"
 
 gem "rails-i18n", "~> 6.0"
+
+gem "dotenv-rails", "~> 2.7"
+
+gem "pg", "~> 1.2"
