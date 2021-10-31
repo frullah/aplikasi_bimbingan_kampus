@@ -13,10 +13,19 @@
 1. pastikan NodeJS sudah terinstall
 2. jalankan perintah `npm install -g yarn` pada command line
 
-
 ## Cara menginstall project ini
 
-copy file `.env.example` ke `.env.production.local`,
+install dependensi
+
+```bash
+# install dependensi Ruby dan Rails 
+bundle install
+
+# install dependensi NodeJS
+yarn install
+```
+
+lalu copy file `.env.example` ke `.env.production.local`,
 
 sesuaikan environment variable,
 
@@ -35,6 +44,8 @@ beberapa environment variable yang wajib disesuaikan
     contoh untuk PostgreSQL: postgres://`USER`@`localhost`/`NAMA_DATABASE`
 
    [Dokumentasi `DATABASE_URL` lebih lanjut](https://blog.arkency.com/database-url-examples-for-rails-db-connection-strings/)
+
+lalu jalankan perintah di bawah ini
 
 ```bash
 # mengompile assets
